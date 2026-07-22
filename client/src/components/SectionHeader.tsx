@@ -36,7 +36,7 @@ export default function SectionHeader({ number, label, title, subtitle, align = 
           fontFamily: 'var(--font-display)',
           fontSize: titleSize || 'clamp(2rem, 4vw, 3.5rem)',
           fontWeight: 300,
-          color: 'oklch(0.95 0.008 75)',
+          color: 'oklch(0.12 0.005 60)',
           lineHeight: 1.1,
           letterSpacing: '-0.02em',
           position: 'relative',
@@ -51,7 +51,7 @@ export default function SectionHeader({ number, label, title, subtitle, align = 
           style={{
             fontFamily: 'var(--font-sans)',
             fontSize: '1rem',
-            color: 'oklch(0.55 0.005 60)',
+            color: 'oklch(0.40 0.005 60)',
             lineHeight: 1.75,
             maxWidth: isCenter ? '600px' : '520px',
             marginLeft: isCenter ? 'auto' : undefined,

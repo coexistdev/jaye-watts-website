@@ -50,7 +50,7 @@ export default function Speaking() {
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/manus-storage/jaye-speaking_7f33e0d3.jpg"
+            src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1600&q=85"
             alt="Jaye Watts speaking"
             className="w-full h-full object-cover"
             style={{ filter: 'brightness(0.3)' }}
@@ -78,7 +78,7 @@ export default function Speaking() {
       </section>
 
       {/* Speaking Topics */}
-      <section className="py-20 lg:py-28">
+      <section className="py-20 lg:py-28" style={{ background: 'oklch(1 0 0)' }}>
         <div className="container">
           <SectionHeader
             number="01"
@@ -86,20 +86,20 @@ export default function Speaking() {
             title="Keynotes that move audiences to action."
             subtitle="Each keynote is tailored to your audience and objectives, drawing on real-world experience and current market intelligence."
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px mt-12" style={{ background: 'oklch(0.18 0.003 60)' }}>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px mt-12" style={{ background: 'oklch(0.88 0.008 75)' }}>
             {topics.map((topic, i) => (
               <div
                 key={topic.title}
                 className="reveal p-8"
-                style={{ background: 'oklch(0.08 0.003 60)', transitionDelay: `${i * 60}ms` }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'oklch(0.11 0.003 60)'; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'oklch(0.08 0.003 60)'; }}
+                style={{ background: 'oklch(0.98 0.008 80)', transitionDelay: `${i * 60}ms` }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'oklch(0.95 0.010 78)'; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'oklch(0.98 0.008 80)'; }}
               >
                 <div className="gold-rule-solid mb-4" style={{ width: '24px' }} />
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 400, color: 'oklch(0.95 0.008 75)', lineHeight: 1.3 }}>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 400, color: 'oklch(0.12 0.005 60)', lineHeight: 1.3 }}>
                   {topic.title}
                 </h3>
-                <p className="mt-3" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.50 0.005 60)', lineHeight: 1.65 }}>
+                <p className="mt-3" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.40 0.005 60)', lineHeight: 1.65 }}>
                   {topic.description}
                 </p>
               </div>
@@ -111,21 +111,21 @@ export default function Speaking() {
       <div className="gold-rule container" />
 
       {/* Conferences */}
-      <section className="py-20 lg:py-28">
+      <section className="py-20 lg:py-28" style={{ background: 'oklch(0.98 0.008 80)' }}>
         <div className="container">
           <SectionHeader
             number="02"
             label="Conferences & Events"
             title="From global stages to intimate summits."
           />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px mt-12" style={{ background: 'oklch(0.18 0.003 60)' }}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px mt-12" style={{ background: 'oklch(0.88 0.008 75)' }}>
             {conferences.map((conf, i) => (
               <div
                 key={conf.name}
                 className="reveal p-6 text-center"
-                style={{ background: 'oklch(0.08 0.003 60)', transitionDelay: `${i * 50}ms` }}
+                style={{ background: 'oklch(0.98 0.008 80)', transitionDelay: `${i * 50}ms` }}
               >
-                <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.125rem', fontWeight: 400, color: 'oklch(0.85 0.008 75)' }}>
+                <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.125rem', fontWeight: 400, color: 'oklch(0.14 0.005 60)' }}>
                   {conf.name}
                 </p>
                 <p className="mt-1" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(0.72 0.12 75)' }}>
@@ -138,7 +138,7 @@ export default function Speaking() {
       </section>
 
       {/* Booking CTA */}
-      <section className="py-20 lg:py-24" style={{ background: 'oklch(0.06 0.003 60)', borderTop: '1px solid oklch(0.18 0.003 60)' }}>
+      <section className="py-20 lg:py-24" style={{ background: 'oklch(0.95 0.010 78)', borderTop: '1px solid oklch(0.88 0.008 75)' }}>
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="reveal">
@@ -146,10 +146,10 @@ export default function Speaking() {
                 <div className="gold-rule-solid" style={{ width: '32px' }} />
                 <span className="section-label">Book Jaye</span>
               </div>
-              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 300, color: 'oklch(0.95 0.008 75)', lineHeight: 1.2 }}>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 300, color: 'oklch(0.12 0.005 60)', lineHeight: 1.2 }}>
                 Bring Jaye's perspective to your next event.
               </h2>
-              <p className="mt-4" style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'oklch(0.55 0.005 60)', lineHeight: 1.7 }}>
+              <p className="mt-4" style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'oklch(0.40 0.005 60)', lineHeight: 1.7 }}>
                 Available for keynote addresses, panel discussions, fireside chats, workshops, and executive roundtables. All engagements are customized to your audience and objectives.
               </p>
             </div>
@@ -164,9 +164,9 @@ export default function Speaking() {
                 <div
                   key={format.label}
                   className="flex items-center justify-between p-4"
-                  style={{ border: '1px solid oklch(0.18 0.003 60)', background: 'oklch(0.10 0.003 60)' }}
+                  style={{ border: '1px solid oklch(0.88 0.008 75)', background: 'oklch(0.98 0.008 80)' }}
                 >
-                  <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9375rem', color: 'oklch(0.85 0.008 75)' }}>
+                  <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9375rem', color: 'oklch(0.18 0.005 60)' }}>
                     {format.label}
                   </span>
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.1em', color: 'oklch(0.45 0.003 60)' }}>

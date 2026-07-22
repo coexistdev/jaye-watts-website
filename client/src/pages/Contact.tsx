@@ -38,24 +38,24 @@ export default function Contact() {
 
   return (
     <PageLayout>
-      <section className="pt-32 pb-20 lg:pt-40 lg:pb-28" style={{ borderBottom: '1px solid oklch(0.18 0.003 60)' }}>
+      <section className="pt-32 pb-20 lg:pt-40 lg:pb-28" style={{ background: 'oklch(0.98 0.008 80)', borderBottom: '1px solid oklch(0.88 0.008 75)' }}>
         <div className="container">
           <div className="max-w-3xl">
             <div className="flex items-center gap-4 mb-8 reveal">
               <div className="gold-rule-solid" style={{ width: '40px' }} />
               <span className="section-label">Contact</span>
             </div>
-            <h1 className="reveal" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 300, color: 'oklch(0.95 0.008 75)', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
+            <h1 className="reveal" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 300, color: 'oklch(0.12 0.005 60)', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
               Begin a conversation.
             </h1>
-            <p className="mt-6 reveal" style={{ fontFamily: 'var(--font-sans)', fontSize: '1.0625rem', color: 'oklch(0.60 0.005 60)', lineHeight: 1.75, maxWidth: '560px', transitionDelay: '100ms' }}>
+            <p className="mt-6 reveal" style={{ fontFamily: 'var(--font-sans)', fontSize: '1.0625rem', color: 'oklch(0.40 0.005 60)', lineHeight: 1.75, maxWidth: '560px', transitionDelay: '100ms' }}>
               Whether you're exploring a brand partnership, booking a keynote, or seeking strategic advisory, Jaye's team responds to all qualified inquiries within 48 hours.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-20 lg:py-28">
+      <section className="py-20 lg:py-28" style={{ background: 'oklch(1 0 0)' }}>
         <div className="container">
           <div className="grid lg:grid-cols-5 gap-16">
             {/* Inquiry type selector */}
@@ -69,15 +69,15 @@ export default function Contact() {
                     className="w-full text-left p-4 transition-all duration-200"
                     style={{
                       border: '1px solid',
-                      borderColor: activeType === type.id ? 'oklch(0.72 0.12 75 / 0.5)' : 'oklch(0.18 0.003 60)',
-                      background: activeType === type.id ? 'oklch(0.72 0.12 75 / 0.06)' : 'oklch(0.10 0.003 60)',
+                      borderColor: activeType === type.id ? 'oklch(0.68 0.13 72)' : 'oklch(0.88 0.008 75)',
+                      background: activeType === type.id ? 'oklch(0.68 0.13 72 / 0.07)' : 'oklch(0.98 0.008 80)',
                     }}
                   >
                     <span
                       style={{
                         fontFamily: 'var(--font-sans)',
                         fontSize: '0.9375rem',
-                        color: activeType === type.id ? 'oklch(0.72 0.12 75)' : 'oklch(0.65 0.005 60)',
+                        color: activeType === type.id ? 'oklch(0.50 0.12 72)' : 'oklch(0.35 0.005 60)',
                       }}
                     >
                       {type.label}
@@ -86,9 +86,9 @@ export default function Contact() {
                 ))}
               </div>
 
-              <div className="mt-10 pt-8" style={{ borderTop: '1px solid oklch(0.18 0.003 60)' }}>
+              <div className="mt-10 pt-8" style={{ borderTop: '1px solid oklch(0.88 0.008 75)' }}>
                 <p className="section-label mb-4">Response Time</p>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.50 0.005 60)', lineHeight: 1.7 }}>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.40 0.005 60)', lineHeight: 1.7 }}>
                   All qualified inquiries receive a response within 48 business hours. For urgent matters, please indicate in your message.
                 </p>
               </div>
@@ -105,15 +105,15 @@ export default function Contact() {
                       placeholder="Your full name"
                       className="w-full p-4 transition-colors duration-200"
                       style={{
-                        background: 'oklch(0.10 0.003 60)',
-                        border: '1px solid oklch(0.22 0.003 60)',
-                        color: 'oklch(0.90 0.008 75)',
+                        background: 'oklch(0.98 0.008 80)',
+                        border: '1px solid oklch(0.88 0.008 75)',
+                        color: 'oklch(0.14 0.005 60)',
                         fontFamily: 'var(--font-sans)',
                         fontSize: '0.9375rem',
                         outline: 'none',
                       }}
-                      onFocus={(e) => { e.target.style.borderColor = 'oklch(0.72 0.12 75 / 0.5)'; }}
-                      onBlur={(e) => { e.target.style.borderColor = 'oklch(0.22 0.003 60)'; }}
+                      onFocus={(e) => { e.target.style.borderColor = 'oklch(0.68 0.13 72)'; }}
+                      onBlur={(e) => { e.target.style.borderColor = 'oklch(0.88 0.008 75)'; }}
                     />
                   </div>
                   <div>
@@ -123,15 +123,15 @@ export default function Contact() {
                       placeholder="Chief Marketing Officer"
                       className="w-full p-4 transition-colors duration-200"
                       style={{
-                        background: 'oklch(0.10 0.003 60)',
-                        border: '1px solid oklch(0.22 0.003 60)',
-                        color: 'oklch(0.90 0.008 75)',
+                        background: 'oklch(0.98 0.008 80)',
+                        border: '1px solid oklch(0.88 0.008 75)',
+                        color: 'oklch(0.14 0.005 60)',
                         fontFamily: 'var(--font-sans)',
                         fontSize: '0.9375rem',
                         outline: 'none',
                       }}
-                      onFocus={(e) => { e.target.style.borderColor = 'oklch(0.72 0.12 75 / 0.5)'; }}
-                      onBlur={(e) => { e.target.style.borderColor = 'oklch(0.22 0.003 60)'; }}
+                      onFocus={(e) => { e.target.style.borderColor = 'oklch(0.68 0.13 72)'; }}
+                      onBlur={(e) => { e.target.style.borderColor = 'oklch(0.88 0.008 75)'; }}
                     />
                   </div>
                 </div>
@@ -144,15 +144,15 @@ export default function Contact() {
                       placeholder="Your organization"
                       className="w-full p-4"
                       style={{
-                        background: 'oklch(0.10 0.003 60)',
-                        border: '1px solid oklch(0.22 0.003 60)',
-                        color: 'oklch(0.90 0.008 75)',
+                        background: 'oklch(0.98 0.008 80)',
+                        border: '1px solid oklch(0.88 0.008 75)',
+                        color: 'oklch(0.14 0.005 60)',
                         fontFamily: 'var(--font-sans)',
                         fontSize: '0.9375rem',
                         outline: 'none',
                       }}
-                      onFocus={(e) => { e.target.style.borderColor = 'oklch(0.72 0.12 75 / 0.5)'; }}
-                      onBlur={(e) => { e.target.style.borderColor = 'oklch(0.22 0.003 60)'; }}
+                      onFocus={(e) => { e.target.style.borderColor = 'oklch(0.68 0.13 72)'; }}
+                      onBlur={(e) => { e.target.style.borderColor = 'oklch(0.88 0.008 75)'; }}
                     />
                   </div>
                   <div>
@@ -163,15 +163,15 @@ export default function Contact() {
                       placeholder="your@company.com"
                       className="w-full p-4"
                       style={{
-                        background: 'oklch(0.10 0.003 60)',
-                        border: '1px solid oklch(0.22 0.003 60)',
-                        color: 'oklch(0.90 0.008 75)',
+                        background: 'oklch(0.98 0.008 80)',
+                        border: '1px solid oklch(0.88 0.008 75)',
+                        color: 'oklch(0.14 0.005 60)',
                         fontFamily: 'var(--font-sans)',
                         fontSize: '0.9375rem',
                         outline: 'none',
                       }}
-                      onFocus={(e) => { e.target.style.borderColor = 'oklch(0.72 0.12 75 / 0.5)'; }}
-                      onBlur={(e) => { e.target.style.borderColor = 'oklch(0.22 0.003 60)'; }}
+                      onFocus={(e) => { e.target.style.borderColor = 'oklch(0.68 0.13 72)'; }}
+                      onBlur={(e) => { e.target.style.borderColor = 'oklch(0.88 0.008 75)'; }}
                     />
                   </div>
                 </div>
@@ -184,23 +184,23 @@ export default function Contact() {
                     placeholder="Please describe your partnership opportunity, speaking engagement, or inquiry in detail. Include relevant timelines, objectives, and any specific requirements."
                     className="w-full p-4 resize-none"
                     style={{
-                      background: 'oklch(0.10 0.003 60)',
-                      border: '1px solid oklch(0.22 0.003 60)',
-                      color: 'oklch(0.90 0.008 75)',
+                      background: 'oklch(0.98 0.008 80)',
+                      border: '1px solid oklch(0.88 0.008 75)',
+                      color: 'oklch(0.14 0.005 60)',
                       fontFamily: 'var(--font-sans)',
                       fontSize: '0.9375rem',
                       outline: 'none',
                       lineHeight: 1.65,
                     }}
-                    onFocus={(e) => { e.target.style.borderColor = 'oklch(0.72 0.12 75 / 0.5)'; }}
-                    onBlur={(e) => { e.target.style.borderColor = 'oklch(0.22 0.003 60)'; }}
+                    onFocus={(e) => { e.target.style.borderColor = 'oklch(0.68 0.13 72)'; }}
+                    onBlur={(e) => { e.target.style.borderColor = 'oklch(0.88 0.008 75)'; }}
                   />
                 </div>
 
                 <input type="hidden" {...register('inquiryType')} value={activeType} />
 
                 <div className="flex items-center justify-between pt-2">
-                  <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'oklch(0.35 0.003 60)' }}>
+                  <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'oklch(0.50 0.005 60)' }}>
                     * Required fields
                   </p>
                   <button
@@ -220,4 +220,3 @@ export default function Contact() {
     </PageLayout>
   );
 }
-

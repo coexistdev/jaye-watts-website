@@ -52,7 +52,7 @@ export default function About() {
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/manus-storage/jaye-strategy_a7f1fcf7.jpg"
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1600&q=85"
             alt="Jaye Watts"
             className="w-full h-full object-cover"
             style={{ filter: 'brightness(0.3)' }}
@@ -79,7 +79,7 @@ export default function About() {
       </section>
 
       {/* The Story */}
-      <section className="py-20 lg:py-28">
+      <section className="py-20 lg:py-28" style={{ background: 'oklch(1 0 0)' }}>
         <div className="container">
           <SectionHeader
             number="01"
@@ -94,7 +94,7 @@ export default function About() {
                 className="reveal grid lg:grid-cols-4 gap-0"
                 style={{
                   transitionDelay: `${i * 80}ms`,
-                  borderTop: '1px solid oklch(0.18 0.003 60)',
+                  borderTop: '1px solid oklch(0.88 0.008 75)',
                   paddingTop: '2rem',
                   paddingBottom: '2rem',
                 }}
@@ -106,10 +106,10 @@ export default function About() {
                   </p>
                 </div>
                 <div className="lg:col-span-3">
-                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.25rem, 2.5vw, 1.75rem)', fontWeight: 400, color: 'oklch(0.95 0.008 75)', lineHeight: 1.3 }}>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.25rem, 2.5vw, 1.75rem)', fontWeight: 400, color: 'oklch(0.12 0.005 60)', lineHeight: 1.3 }}>
                     {chapter.title}
                   </h3>
-                  <p className="mt-4" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9375rem', color: 'oklch(0.55 0.005 60)', lineHeight: 1.75 }}>
+                  <p className="mt-4" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9375rem', color: 'oklch(0.40 0.005 60)', lineHeight: 1.75 }}>
                     {chapter.body}
                   </p>
                 </div>
@@ -122,27 +122,27 @@ export default function About() {
       <div className="gold-rule container" />
 
       {/* Ventures */}
-      <section className="py-20 lg:py-28" style={{ background: 'oklch(0.06 0.003 60)' }}>
+      <section className="py-20 lg:py-28" style={{ background: 'oklch(0.95 0.010 78)' }}>
         <div className="container">
           <SectionHeader
             number="02"
             label="Ventures"
             title="Brands built from conviction."
           />
-          <div className="grid md:grid-cols-3 gap-px mt-12" style={{ background: 'oklch(0.18 0.003 60)' }}>
+          <div className="grid md:grid-cols-3 gap-px mt-12" style={{ background: 'oklch(0.88 0.008 75)' }}>
             {ventures.map((v, i) => (
               <div
                 key={v.name}
                 className="reveal p-8"
-                style={{ background: 'oklch(0.06 0.003 60)', transitionDelay: `${i * 80}ms` }}
+                style={{ background: 'oklch(0.95 0.010 78)', transitionDelay: `${i * 80}ms` }}
               >
                 <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(0.72 0.12 75)' }}>
                   {v.role}
                 </p>
-                <h3 className="mt-3" style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', fontWeight: 300, color: 'oklch(0.95 0.008 75)' }}>
+                <h3 className="mt-3" style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', fontWeight: 300, color: 'oklch(0.14 0.005 60)' }}>
                   {v.name}
                 </h3>
-                <p className="mt-2" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.50 0.005 60)' }}>
+                <p className="mt-2" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.40 0.005 60)' }}>
                   {v.description}
                 </p>
               </div>
@@ -152,13 +152,13 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-24" style={{ borderTop: '1px solid oklch(0.18 0.003 60)' }}>
+      <section className="py-20 lg:py-24" style={{ background: 'oklch(0.98 0.008 80)', borderTop: '1px solid oklch(0.88 0.008 75)' }}>
         <div className="container text-center">
           <div className="reveal max-w-xl mx-auto">
-            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 300, color: 'oklch(0.95 0.008 75)' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 300, color: 'oklch(0.14 0.005 60)' }}>
               Ready to partner with Jaye?
             </h2>
-            <p className="mt-4 mb-8" style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'oklch(0.55 0.005 60)', lineHeight: 1.7 }}>
+            <p className="mt-4 mb-8" style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'oklch(0.40 0.005 60)', lineHeight: 1.7 }}>
               The best partnerships begin with a conversation. Let's explore what's possible together.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

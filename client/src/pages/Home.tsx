@@ -35,7 +35,7 @@ const featuredWork = [
     category: 'Gaming',
     title: 'Coexist Gaming',
     description: 'Building the intersection of gaming culture and brand strategy, creating community-driven activations that drive measurable engagement and revenue.',
-    image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80',
     href: '/portfolio',
   },
   {
@@ -43,7 +43,7 @@ const featuredWork = [
     category: 'Wine & Spirits',
     title: 'Proud Wineaux',
     description: 'Founder of a wine lifestyle brand that bridges culture, community, and commerce — redefining how diverse audiences engage with the wine industry.',
-    image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1474722883778-792e7990302f?w=800&q=80',
     href: '/portfolio',
   },
   {
@@ -51,7 +51,7 @@ const featuredWork = [
     category: 'Entertainment',
     title: 'Coexist Agency',
     description: 'A full-service creative agency producing experiential campaigns, brand activations, and cultural moments for global brands.',
-    image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80',
     href: '/portfolio',
   },
 ];
@@ -114,8 +114,8 @@ export default function Home() {
                 transition: 'all 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.1s',
               }}
             >
-              Strategy that<br />
-              <em style={{ color: 'oklch(0.72 0.12 75)', fontStyle: 'italic' }}>moves culture.</em>
+              Where culture becomes<br />
+              <em style={{ color: 'oklch(0.68 0.13 72)', fontStyle: 'italic' }}>competitive advantage.</em>
             </h1>
 
             <p
@@ -130,7 +130,7 @@ export default function Home() {
                 transition: 'all 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.2s',
               }}
             >
-              Jaye "Letta J" Watts is a multidisciplinary strategic brand partner who helps organizations transform attention into participation, participation into influence, and influence into measurable business growth.
+              Jaye "Letta J" Watts operates at the intersection of business strategy, culture, innovation, storytelling, technology, and experiential marketing. She turns attention into participation, and participation into lasting business growth.
             </p>
 
             <div
@@ -161,9 +161,9 @@ export default function Home() {
       </section>
 
       {/* ── QUICK NAVIGATION TILES ───────────────────────────────────── */}
-      <section style={{ background: 'oklch(0.06 0.003 60)', borderTop: '1px solid oklch(0.18 0.003 60)' }}>
+      <section style={{ background: 'oklch(1 0 0)', borderTop: '1px solid oklch(0.88 0.008 75)' }}>
         <div className="container py-0">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 divide-x divide-y" style={{ borderColor: 'oklch(0.18 0.003 60)' }}>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 divide-x divide-y" style={{ borderColor: 'oklch(0.88 0.008 75)' }}>
             {[
               { label: 'Partner With Jaye', href: '/why-partner' },
               { label: 'Speaking', href: '/speaking' },
@@ -177,14 +177,14 @@ export default function Home() {
                 href={item.href}
                 className="group flex items-center justify-center py-5 px-4 transition-all duration-200"
                 style={{
-                  background: item.highlight ? 'oklch(0.72 0.12 75 / 0.08)' : 'transparent',
-                  borderColor: 'oklch(0.18 0.003 60)',
+                  background: item.highlight ? 'oklch(0.68 0.13 72 / 0.07)' : 'transparent',
+                  borderColor: 'oklch(0.88 0.008 75)',
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = item.highlight ? 'oklch(0.72 0.12 75 / 0.15)' : 'oklch(0.12 0.003 60)';
+                  (e.currentTarget as HTMLElement).style.background = item.highlight ? 'oklch(0.68 0.13 72 / 0.12)' : 'oklch(0.95 0.010 78)';
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = item.highlight ? 'oklch(0.72 0.12 75 / 0.08)' : 'transparent';
+                  (e.currentTarget as HTMLElement).style.background = item.highlight ? 'oklch(0.68 0.13 72 / 0.07)' : 'transparent';
                 }}
               >
                 <span
@@ -193,7 +193,7 @@ export default function Home() {
                     fontSize: '0.65rem',
                     letterSpacing: '0.12em',
                     textTransform: 'uppercase',
-                    color: item.highlight ? 'oklch(0.72 0.12 75)' : 'oklch(0.60 0.005 60)',
+                    color: item.highlight ? 'oklch(0.68 0.13 72)' : 'oklch(0.40 0.005 60)',
                     textAlign: 'center',
                   }}
                 >
@@ -206,16 +206,16 @@ export default function Home() {
       </section>
 
       {/* ── STATS ────────────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28">
+      <section className="py-20 lg:py-28" style={{ background: 'oklch(0.98 0.008 80)' }}>
         <div className="container">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x" style={{ borderColor: 'oklch(0.18 0.003 60)' }}>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x" style={{ borderColor: 'oklch(0.88 0.008 75)' }}>
             {stats.map((stat, i) => (
               <div
                 key={stat.label}
                 className="reveal lg:px-10 first:pl-0 last:pr-0"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 300, color: 'oklch(0.72 0.12 75)', lineHeight: 1 }}>
+                <p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 300, color: 'oklch(0.68 0.13 72)', lineHeight: 1 }}>
                   {stat.value}
                 </p>
                 <p className="mt-2" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(0.50 0.005 60)' }}>
@@ -230,7 +230,7 @@ export default function Home() {
       <div className="gold-rule container" />
 
       {/* ── VALUE PROPOSITION ────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28">
+      <section className="py-20 lg:py-28" style={{ background: 'oklch(1 0 0)' }}>
         <div className="container">
           <div className="editorial-split">
             <SectionHeader
@@ -248,11 +248,11 @@ export default function Home() {
                     style={{
                       transitionDelay: `${i * 40}ms`,
                       padding: '0.75rem 1rem',
-                      border: '1px solid oklch(0.18 0.003 60)',
-                      background: 'oklch(0.10 0.003 60)',
+                      border: '1px solid oklch(0.88 0.008 75)',
+                      background: 'oklch(0.98 0.008 80)',
                     }}
                   >
-                    <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.8125rem', color: 'oklch(0.70 0.005 60)' }}>
+                    <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.8125rem', color: 'oklch(0.30 0.005 60)' }}>
                       {cap}
                     </span>
                   </div>
@@ -271,7 +271,7 @@ export default function Home() {
       <div className="gold-rule container" />
 
       {/* ── FEATURED WORK ────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28">
+      <section className="py-20 lg:py-28" style={{ background: 'oklch(0.95 0.010 78)' }}>
         <div className="container">
           <div className="flex items-end justify-between mb-12 relative">
             <SectionHeader
@@ -343,7 +343,7 @@ export default function Home() {
       <section className="relative py-20 lg:py-28 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/manus-storage/jaye-speaking_7f33e0d3.jpg"
+            src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1600&q=85"
             alt="Jaye Watts speaking"
             className="w-full h-full object-cover"
             style={{ filter: 'brightness(0.35)' }}
@@ -373,7 +373,7 @@ export default function Home() {
       </section>
 
       {/* ── INDUSTRIES ───────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28" style={{ background: 'oklch(0.06 0.003 60)' }}>
+      <section className="py-20 lg:py-28" style={{ background: 'oklch(1 0 0)' }}>
         <div className="container">
           <SectionHeader
             number="03"
@@ -389,23 +389,23 @@ export default function Home() {
                 style={{
                   transitionDelay: `${i * 40}ms`,
                   padding: '0.625rem 1.25rem',
-                  border: '1px solid oklch(0.22 0.003 60)',
+                  border: '1px solid oklch(0.85 0.008 75)',
                   fontFamily: 'var(--font-mono)',
                   fontSize: '0.7rem',
                   letterSpacing: '0.12em',
                   textTransform: 'uppercase',
-                  color: 'oklch(0.60 0.005 60)',
+                  color: 'oklch(0.35 0.005 60)',
                 }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = 'oklch(0.72 0.12 75 / 0.5)';
-                  el.style.color = 'oklch(0.72 0.12 75)';
-                  el.style.background = 'oklch(0.72 0.12 75 / 0.06)';
+                  el.style.borderColor = 'oklch(0.68 0.13 72)';
+                  el.style.color = 'oklch(0.55 0.12 72)';
+                  el.style.background = 'oklch(0.68 0.13 72 / 0.08)';
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = 'oklch(0.22 0.003 60)';
-                  el.style.color = 'oklch(0.60 0.005 60)';
+                  el.style.borderColor = 'oklch(0.85 0.008 75)';
+                  el.style.color = 'oklch(0.35 0.005 60)';
                   el.style.background = 'transparent';
                 }}
               >
@@ -420,19 +420,19 @@ export default function Home() {
       </section>
 
       {/* ── FINAL CTA ────────────────────────────────────────────────── */}
-      <section className="py-24 lg:py-32">
-        <div className="container text-center">
+      <section className="py-24 lg:py-32 bg-obsidian">
+        <div className="container text-center" style={{ color: 'oklch(0.95 0.008 75)' }}>
           <div className="reveal max-w-2xl mx-auto">
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="gold-rule-solid" style={{ width: '32px' }} />
-              <span className="section-label">Begin a Partnership</span>
+              <span className="section-label-light">Begin a Partnership</span>
               <div className="gold-rule-solid" style={{ width: '32px' }} />
             </div>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 300, color: 'oklch(0.95 0.008 75)', lineHeight: 1.1 }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 300, color: 'oklch(0.97 0.008 75)', lineHeight: 1.1 }}>
               Ready to build something<br />
-              <em style={{ color: 'oklch(0.72 0.12 75)', fontStyle: 'italic' }}>that matters?</em>
+              <em style={{ color: 'oklch(0.68 0.13 72)', fontStyle: 'italic' }}>that matters?</em>
             </h2>
-            <p className="mt-6 mb-10" style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'oklch(0.55 0.005 60)', lineHeight: 1.7 }}>
+            <p className="mt-6 mb-10" style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'oklch(0.65 0.005 60)', lineHeight: 1.7 }}>
               Whether you're launching a product, entering a new market, building community, or seeking a strategic advisor, Jaye brings the expertise, relationships, and execution capability to make it happen.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

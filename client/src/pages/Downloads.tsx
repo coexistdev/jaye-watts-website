@@ -67,24 +67,24 @@ export default function Downloads() {
 
   return (
     <PageLayout>
-      <section className="pt-32 pb-20 lg:pt-40 lg:pb-28" style={{ borderBottom: '1px solid oklch(0.18 0.003 60)' }}>
+      <section className="pt-32 pb-20 lg:pt-40 lg:pb-28" style={{ background: 'oklch(0.98 0.008 80)', borderBottom: '1px solid oklch(0.88 0.008 75)' }}>
         <div className="container">
           <div className="max-w-3xl">
             <div className="flex items-center gap-4 mb-8 reveal">
               <div className="gold-rule-solid" style={{ width: '40px' }} />
               <span className="section-label">Resource Center</span>
             </div>
-            <h1 className="reveal" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 300, color: 'oklch(0.95 0.008 75)', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
+            <h1 className="reveal" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 300, color: 'oklch(0.12 0.005 60)', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
               Professional resources for partners and press.
             </h1>
-            <p className="mt-6 reveal" style={{ fontFamily: 'var(--font-sans)', fontSize: '1.0625rem', color: 'oklch(0.60 0.005 60)', lineHeight: 1.75, maxWidth: '560px', transitionDelay: '100ms' }}>
+            <p className="mt-6 reveal" style={{ fontFamily: 'var(--font-sans)', fontSize: '1.0625rem', color: 'oklch(0.40 0.005 60)', lineHeight: 1.75, maxWidth: '560px', transitionDelay: '100ms' }}>
               Everything you need to feature, partner with, or book Jaye — available for immediate download.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-20 lg:py-28">
+      <section className="py-20 lg:py-28" style={{ background: "oklch(1 0 0)" }}>
         <div className="container">
           <div className="space-y-16">
             {resources.map((group, gi) => (
@@ -93,14 +93,14 @@ export default function Downloads() {
                   <div className="gold-rule-solid" style={{ width: '24px' }} />
                   <span className="section-label">{group.category}</span>
                 </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px" style={{ background: 'oklch(0.18 0.003 60)' }}>
+                <div className={`grid gap-px ${group.items.length >= 3 ? 'md:grid-cols-2 lg:grid-cols-3' : group.items.length === 2 ? 'md:grid-cols-2' : 'grid-cols-1 max-w-sm'}`} style={{ background: 'oklch(0.88 0.008 75)' }}>
                   {group.items.map((item) => (
                     <div
                       key={item.title}
                       className="group p-8 transition-colors duration-200"
-                      style={{ background: 'oklch(0.08 0.003 60)' }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'oklch(0.11 0.003 60)'; }}
-                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'oklch(0.08 0.003 60)'; }}
+                      style={{ background: 'oklch(0.98 0.008 80)' }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'oklch(0.95 0.010 78)'; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'oklch(0.98 0.008 80)'; }}
                     >
                       <div className="flex items-start justify-between mb-4">
                         <span style={{ fontSize: '1.25rem', color: 'oklch(0.72 0.12 75)' }}>{item.icon}</span>
@@ -108,10 +108,10 @@ export default function Downloads() {
                           {item.format}
                         </span>
                       </div>
-                      <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 400, color: 'oklch(0.95 0.008 75)' }}>
+                      <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 400, color: 'oklch(0.14 0.005 60)' }}>
                         {item.title}
                       </h3>
-                      <p className="mt-3" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.50 0.005 60)', lineHeight: 1.65 }}>
+                      <p className="mt-3" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.40 0.005 60)', lineHeight: 1.65 }}>
                         {item.description}
                       </p>
                       <button
@@ -130,13 +130,13 @@ export default function Downloads() {
         </div>
       </section>
 
-      <section className="py-16 lg:py-20" style={{ background: 'oklch(0.06 0.003 60)', borderTop: '1px solid oklch(0.18 0.003 60)' }}>
+      <section className="py-16 lg:py-20" style={{ background: 'oklch(0.95 0.010 78)', borderTop: '1px solid oklch(0.88 0.008 75)' }}>
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="reveal">
-            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', fontWeight: 300, color: 'oklch(0.95 0.008 75)' }}>
+            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', fontWeight: 300, color: 'oklch(0.14 0.005 60)' }}>
               Need something specific?
             </h3>
-            <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.55 0.005 60)', marginTop: '0.5rem' }}>
+            <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.40 0.005 60)', marginTop: '0.5rem' }}>
               Contact us directly for custom materials or immediate access.
             </p>
           </div>

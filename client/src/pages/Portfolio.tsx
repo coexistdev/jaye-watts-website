@@ -17,7 +17,7 @@ const caseStudies = [
     subtitle: 'Building a gaming culture brand from the ground up',
     description: 'Founded and scaled Coexist Gaming as a premier gaming lifestyle brand, creating community-driven activations, brand partnerships, and content that bridges gaming culture with mainstream consumer brands.',
     outcomes: ['10M+ community reach', 'Fortune 500 brand partnerships', 'National media coverage'],
-    image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900&q=80',
     tags: ['Gaming', 'Brand Building', 'Community'],
   },
   {
@@ -27,7 +27,7 @@ const caseStudies = [
     subtitle: 'Redefining wine culture for diverse audiences',
     description: 'Founded Proud Wineaux to create an inclusive wine lifestyle brand that speaks authentically to underrepresented communities, building a loyal following and establishing strategic partnerships with wineries and hospitality brands.',
     outcomes: ['Sold-out events series', 'National distribution partnerships', 'Featured in major publications'],
-    image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1474722883778-792e7990302f?w=900&q=80',
     tags: ['Wine & Spirits', 'Lifestyle', 'Community'],
   },
   {
@@ -37,7 +37,7 @@ const caseStudies = [
     subtitle: 'Full-service experiential marketing agency',
     description: 'Built Coexist Agency into a full-service creative and experiential marketing firm, producing brand activations, cultural events, and strategic campaigns for global brands across entertainment, technology, and consumer goods.',
     outcomes: ['100+ activations produced', 'Global brand clients', 'Multi-million dollar campaigns'],
-    image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=80',
     tags: ['Agency', 'Experiential', 'Entertainment'],
   },
   {
@@ -57,7 +57,7 @@ const caseStudies = [
     subtitle: 'Entering new markets with cultural intelligence',
     description: 'Developed comprehensive market entry strategies for brands seeking to reach diverse and underserved consumer segments, combining cultural research, community partnerships, and targeted activation plans.',
     outcomes: ['New market penetration', 'Community trust built', 'Sustained revenue growth'],
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80',
     tags: ['Strategy', 'Market Entry', 'Diversity'],
   },
   {
@@ -67,7 +67,7 @@ const caseStudies = [
     subtitle: 'Thought leadership on culture, brand, and innovation',
     description: 'Delivered keynote addresses and panel discussions at major industry conferences, sharing insights on brand strategy, gaming culture, entrepreneurship, and the future of experiential marketing.',
     outcomes: ['50+ conferences', 'International stages', 'Industry recognition'],
-    image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1559223607-a43c990c692c?w=900&q=80',
     tags: ['Speaking', 'Thought Leadership', 'Global'],
   },
 ];
@@ -82,17 +82,17 @@ export default function Portfolio() {
   return (
     <PageLayout>
       {/* Page Hero */}
-      <section className="pt-32 pb-20 lg:pt-40 lg:pb-28" style={{ borderBottom: '1px solid oklch(0.18 0.003 60)' }}>
+      <section className="pt-32 pb-20 lg:pt-40 lg:pb-28" style={{ background: 'oklch(0.98 0.008 80)', borderBottom: '1px solid oklch(0.88 0.008 75)' }}>
         <div className="container">
           <div className="max-w-3xl">
             <div className="flex items-center gap-4 mb-8 reveal">
               <div className="gold-rule-solid" style={{ width: '40px' }} />
               <span className="section-label">Partnership Portfolio</span>
             </div>
-            <h1 className="reveal" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 300, color: 'oklch(0.95 0.008 75)', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
+            <h1 className="reveal" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 300, color: 'oklch(0.12 0.005 60)', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
               Work that defines industries and moves culture.
             </h1>
-            <p className="mt-6 reveal" style={{ fontFamily: 'var(--font-sans)', fontSize: '1.0625rem', color: 'oklch(0.60 0.005 60)', lineHeight: 1.75, maxWidth: '560px', transitionDelay: '100ms' }}>
+            <p className="mt-6 reveal" style={{ fontFamily: 'var(--font-sans)', fontSize: '1.0625rem', color: 'oklch(0.40 0.005 60)', lineHeight: 1.75, maxWidth: '560px', transitionDelay: '100ms' }}>
               A curated selection of campaigns, partnerships, ventures, and activations representing the breadth of Jaye's strategic impact.
             </p>
           </div>
@@ -100,7 +100,7 @@ export default function Portfolio() {
       </section>
 
       {/* Filter */}
-      <section style={{ borderBottom: '1px solid oklch(0.18 0.003 60)', background: 'oklch(0.06 0.003 60)' }}>
+      <section style={{ borderBottom: '1px solid oklch(0.88 0.008 75)', background: 'oklch(0.95 0.010 78)' }}>
         <div className="container py-0">
           <div className="flex gap-0 overflow-x-auto">
             {categories.map((cat) => (
@@ -128,7 +128,7 @@ export default function Portfolio() {
       </section>
 
       {/* Case Studies Grid */}
-      <section className="py-20 lg:py-28">
+      <section className="py-20 lg:py-28" style={{ background: 'oklch(1 0 0)' }}>
         <div className="container">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filtered.map((study, i) => (
@@ -161,14 +161,14 @@ export default function Portfolio() {
                     </span>
                   </div>
                 </div>
-                <div className="pt-5 pb-6" style={{ borderBottom: '1px solid oklch(0.18 0.003 60)' }}>
-                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 400, color: 'oklch(0.95 0.008 75)' }}>
+                <div className="pt-5 pb-6" style={{ borderBottom: '1px solid oklch(0.88 0.008 75)' }}>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 400, color: 'oklch(0.14 0.005 60)' }}>
                     {study.title}
                   </h3>
-                  <p className="mt-1" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.8125rem', color: 'oklch(0.55 0.005 60)' }}>
+                  <p className="mt-1" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.8125rem', color: 'oklch(0.40 0.005 60)' }}>
                     {study.subtitle}
                   </p>
-                  <p className="mt-3" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.50 0.005 60)', lineHeight: 1.65 }}>
+                  <p className="mt-3" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.40 0.005 60)', lineHeight: 1.65 }}>
                     {study.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mt-4">
@@ -198,13 +198,13 @@ export default function Portfolio() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 lg:py-20" style={{ background: 'oklch(0.06 0.003 60)', borderTop: '1px solid oklch(0.18 0.003 60)' }}>
+      <section className="py-16 lg:py-20" style={{ background: 'oklch(0.95 0.010 78)', borderTop: '1px solid oklch(0.88 0.008 75)' }}>
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="reveal">
             <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', fontWeight: 300, color: 'oklch(0.95 0.008 75)' }}>
               Interested in working together?
             </h3>
-            <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.55 0.005 60)', marginTop: '0.5rem' }}>
+            <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.40 0.005 60)', marginTop: '0.5rem' }}>
               Let's discuss how Jaye can bring this level of impact to your brand.
             </p>
           </div>

@@ -102,17 +102,17 @@ export default function Spotlight() {
 
   return (
     <PageLayout>
-      <section className="pt-32 pb-20 lg:pt-40 lg:pb-28" style={{ borderBottom: '1px solid oklch(0.18 0.003 60)' }}>
+      <section className="pt-32 pb-20 lg:pt-40 lg:pb-28" style={{ background: 'oklch(0.98 0.008 80)', borderBottom: '1px solid oklch(0.88 0.008 75)' }}>
         <div className="container">
           <div className="max-w-3xl">
             <div className="flex items-center gap-4 mb-8 reveal">
               <div className="gold-rule-solid" style={{ width: '40px' }} />
               <span className="section-label">In the Spotlight</span>
             </div>
-            <h1 className="reveal" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 300, color: 'oklch(0.95 0.008 75)', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
+            <h1 className="reveal" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 300, color: 'oklch(0.12 0.005 60)', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
               Media appearances, features, and press coverage.
             </h1>
-            <p className="mt-6 reveal" style={{ fontFamily: 'var(--font-sans)', fontSize: '1.0625rem', color: 'oklch(0.60 0.005 60)', lineHeight: 1.75, maxWidth: '560px', transitionDelay: '100ms' }}>
+            <p className="mt-6 reveal" style={{ fontFamily: 'var(--font-sans)', fontSize: '1.0625rem', color: 'oklch(0.40 0.005 60)', lineHeight: 1.75, maxWidth: '560px', transitionDelay: '100ms' }}>
               Jaye's expertise is regularly sought by leading media outlets, podcasts, and publications across business, entertainment, and culture.
             </p>
           </div>
@@ -120,7 +120,7 @@ export default function Spotlight() {
       </section>
 
       {/* Filter */}
-      <section style={{ borderBottom: '1px solid oklch(0.18 0.003 60)', background: 'oklch(0.06 0.003 60)' }}>
+      <section style={{ borderBottom: '1px solid oklch(0.88 0.008 75)', background: 'oklch(0.95 0.010 78)' }}>
         <div className="container py-0">
           <div className="flex gap-0 overflow-x-auto">
             {categories.map((cat) => (
@@ -147,7 +147,7 @@ export default function Spotlight() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-28">
+      <section className="py-20 lg:py-28" style={{ background: "oklch(1 0 0)" }}>
         <div className="container">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((item, i) => (
@@ -156,18 +156,18 @@ export default function Spotlight() {
                 className="reveal group"
                 style={{
                   transitionDelay: `${i * 60}ms`,
-                  border: '1px solid oklch(0.18 0.003 60)',
-                  background: 'oklch(0.10 0.003 60)',
+                  border: '1px solid oklch(0.88 0.008 75)',
+                  background: 'oklch(0.98 0.008 80)',
                   padding: '1.5rem',
                   transition: 'border-color 0.2s ease, background 0.2s ease',
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLElement).style.borderColor = 'oklch(0.72 0.12 75 / 0.3)';
-                  (e.currentTarget as HTMLElement).style.background = 'oklch(0.12 0.003 60)';
+                  (e.currentTarget as HTMLElement).style.background = 'oklch(0.95 0.010 78)';
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = 'oklch(0.18 0.003 60)';
-                  (e.currentTarget as HTMLElement).style.background = 'oklch(0.10 0.003 60)';
+                  (e.currentTarget as HTMLElement).style.borderColor = 'oklch(0.88 0.008 75)';
+                  (e.currentTarget as HTMLElement).style.background = 'oklch(0.98 0.008 80)';
                 }}
               >
                 <div className="flex items-center justify-between mb-4">
@@ -189,10 +189,10 @@ export default function Spotlight() {
                     {item.type}
                   </span>
                 </div>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(0.50 0.005 60)', marginBottom: '0.5rem' }}>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(0.40 0.005 60)', marginBottom: '0.5rem' }}>
                   {item.outlet}
                 </p>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.125rem', fontWeight: 400, color: 'oklch(0.90 0.008 75)', lineHeight: 1.35 }}>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.125rem', fontWeight: 400, color: 'oklch(0.14 0.005 60)', lineHeight: 1.35 }}>
                   {item.title}
                 </h3>
                 <p className="mt-3" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.8125rem', color: 'oklch(0.45 0.003 60)', lineHeight: 1.65 }}>
@@ -209,13 +209,13 @@ export default function Spotlight() {
         </div>
       </section>
 
-      <section className="py-16" style={{ background: 'oklch(0.06 0.003 60)', borderTop: '1px solid oklch(0.18 0.003 60)' }}>
+      <section className="py-16" style={{ background: 'oklch(0.95 0.010 78)', borderTop: '1px solid oklch(0.88 0.008 75)' }}>
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="reveal">
-            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', fontWeight: 300, color: 'oklch(0.95 0.008 75)' }}>
+            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', fontWeight: 300, color: 'oklch(0.14 0.005 60)' }}>
               Media inquiries welcome.
             </h3>
-            <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.55 0.005 60)', marginTop: '0.5rem' }}>
+            <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.40 0.005 60)', marginTop: '0.5rem' }}>
               For interviews, features, and press opportunities.
             </p>
           </div>

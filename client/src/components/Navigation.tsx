@@ -56,9 +56,9 @@ export default function Navigation() {
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
         style={{
           transform: visible ? 'translateY(0)' : 'translateY(-100%)',
-          background: scrolled ? 'oklch(0.08 0.003 60 / 0.92)' : 'transparent',
+          background: scrolled ? 'oklch(1 0 0 / 0.96)' : 'transparent',
           backdropFilter: scrolled ? 'blur(16px)' : 'none',
-          borderBottom: scrolled ? '1px solid oklch(0.18 0.003 60)' : '1px solid transparent',
+          borderBottom: scrolled ? '1px solid oklch(0.88 0.008 75)' : '1px solid transparent',
         }}
       >
         <div className="container flex items-center justify-between h-16 lg:h-20">
@@ -71,7 +71,7 @@ export default function Navigation() {
               />
               <span
                 className="hidden sm:block"
-                style={{ fontFamily: 'var(--font-mono)', color: 'oklch(0.95 0.008 75)', letterSpacing: '0.18em', fontSize: '0.7rem', textTransform: 'uppercase', whiteSpace: 'nowrap' }}
+                style={{ fontFamily: 'var(--font-mono)', color: scrolled ? 'oklch(0.14 0.005 60)' : 'oklch(0.95 0.008 75)', letterSpacing: '0.18em', fontSize: '0.7rem', textTransform: 'uppercase', whiteSpace: 'nowrap', transition: 'color 0.3s ease' }}
               >
                 Jaye Watts
               </span>
@@ -90,18 +90,18 @@ export default function Navigation() {
                   letterSpacing: '0.15em',
                   textTransform: 'uppercase',
                   color: location === link.href
-                    ? 'oklch(0.72 0.12 75)'
-                    : 'oklch(0.70 0.005 60)',
+                    ? 'oklch(0.68 0.13 72)'
+                    : scrolled ? 'oklch(0.40 0.005 60)' : 'oklch(0.80 0.005 60)',
                   whiteSpace: 'nowrap',
                 }}
                 onMouseEnter={(e) => {
                   if (location !== link.href) {
-                    (e.target as HTMLElement).style.color = 'oklch(0.95 0.008 75)';
+                    (e.target as HTMLElement).style.color = scrolled ? 'oklch(0.14 0.005 60)' : 'oklch(0.95 0.008 75)';
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (location !== link.href) {
-                    (e.target as HTMLElement).style.color = 'oklch(0.70 0.005 60)';
+                    (e.target as HTMLElement).style.color = scrolled ? 'oklch(0.40 0.005 60)' : 'oklch(0.80 0.005 60)';
                   }
                 }}
               >
@@ -112,7 +112,7 @@ export default function Navigation() {
 
           {/* CTA + Hamburger */}
           <div className="flex items-center gap-4">
-            <Link href="/contact" className="hidden lg:block btn-gold text-xs py-2.5 px-5">
+            <Link href="/contact" className={`hidden lg:block text-xs py-2.5 px-5 ${scrolled ? 'btn-navy' : 'btn-gold'}`}>
               Book a Conversation
             </Link>
             <button
@@ -123,21 +123,21 @@ export default function Navigation() {
               <span
                 className="block w-6 h-px transition-all duration-300"
                 style={{
-                  background: 'oklch(0.95 0.008 75)',
+                  background: scrolled ? 'oklch(0.14 0.005 60)' : 'oklch(0.95 0.008 75)',
                   transform: menuOpen ? 'rotate(45deg) translate(4px, 4px)' : 'none',
                 }}
               />
               <span
                 className="block w-4 h-px transition-all duration-300"
                 style={{
-                  background: 'oklch(0.95 0.008 75)',
+                  background: scrolled ? 'oklch(0.14 0.005 60)' : 'oklch(0.95 0.008 75)',
                   opacity: menuOpen ? 0 : 1,
                 }}
               />
               <span
                 className="block w-6 h-px transition-all duration-300"
                 style={{
-                  background: 'oklch(0.95 0.008 75)',
+                  background: scrolled ? 'oklch(0.14 0.005 60)' : 'oklch(0.95 0.008 75)',
                   transform: menuOpen ? 'rotate(-45deg) translate(4px, -4px)' : 'none',
                 }}
               />
