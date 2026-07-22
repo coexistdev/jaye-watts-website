@@ -5,31 +5,37 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-
+import WhyPartner from "./pages/WhyPartner";
+import Portfolio from "./pages/Portfolio";
+import Industries from "./pages/Industries";
+import Spotlight from "./pages/Spotlight";
+import Speaking from "./pages/Speaking";
+import About from "./pages/About";
+import Downloads from "./pages/Downloads";
+import Contact from "./pages/Contact";
 
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
+      <Route path="/" component={Home} />
+      <Route path="/why-partner" component={WhyPartner} />
+      <Route path="/portfolio" component={Portfolio} />
+      <Route path="/industries" component={Industries} />
+      <Route path="/spotlight" component={Spotlight} />
+      <Route path="/speaking" component={Speaking} />
+      <Route path="/about" component={About} />
+      <Route path="/downloads" component={Downloads} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
+      <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
           <Router />
