@@ -148,7 +148,7 @@ export default function Home() {
       <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'flex-end', paddingBottom: '10vh', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0 }}>
           <img
-            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1800&q=90"
+            src="/manus-storage/jaye-hero-portrait_b26f5a7c.jpg"
             alt="Jaye Watts"
             style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.38)' }}
           />
