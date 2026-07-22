@@ -42,7 +42,7 @@ const WORK_ITEMS = [
 ];
 
 const SPEAKING_TOPICS = [
-  { title: 'Culture as Competitive Advantage', desc: 'How brands that invest in cultural intelligence outperform those that rely solely on data.' },
+  { title: 'The Creator Economy as Competitive Advantage', desc: 'How brands that invest in cultural intelligence outperform those that rely solely on data.' },
   { title: 'The New Multicultural Consumer', desc: 'Understanding the values, behaviors, and purchasing power of today\'s diverse majority.' },
   { title: 'Gaming, Music & the Future of Brand Relevance', desc: 'Why the intersection of entertainment and commerce is the most important space in marketing.' },
   { title: 'Partnership Architecture', desc: 'Building strategic alliances that create equity, not just awareness, for all parties involved.' },

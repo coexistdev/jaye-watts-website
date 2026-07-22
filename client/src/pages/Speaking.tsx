@@ -5,7 +5,7 @@ import { Link } from 'wouter';
 import PageLayout from '../components/PageLayout';
 
 const TOPICS = [
-  { title: 'Culture as Competitive Advantage', description: 'How brands that invest in cultural intelligence consistently outperform those that rely on traditional marketing alone. A framework for building cultural fluency into brand strategy.' },
+  { title: 'The Creator Economy as Competitive Advantage', description: 'How brands that invest in cultural intelligence consistently outperform those that rely on traditional marketing alone. A framework for building cultural fluency into brand strategy.' },
   { title: 'The Future of Experiential Marketing', description: 'Moving beyond events to create immersive brand ecosystems that drive lasting behavioral change and community loyalty. Real-world case studies from gaming, music, and hospitality.' },
   { title: 'Gaming, Community, and the New Consumer', description: 'Understanding the gaming generation and how brands can authentically engage with this massive, influential audience. The opportunity most brands are still missing.' },
   { title: 'Multidisciplinary Entrepreneurship', description: 'Building multiple ventures simultaneously by applying consistent strategic principles across diverse industries. The mindset, systems, and networks that make it possible.' },
