@@ -483,9 +483,9 @@ const MEDIA_ENTRIES: MediaEntry[] = [
 ];
 
 const MEDIA_CATEGORIES: MediaCategory[] = [
-  'All', 'Television', 'Publications', 'Podcasts', 'Gaming',
+  'All', 'Industry Judge', 'Television', 'Publications', 'Podcasts', 'Gaming',
   'Technology', 'Music & Entertainment', 'Hospitality & Wine',
-  'Brand Partnerships', 'Speaking', 'Videos', 'Industry Judge',
+  'Brand Partnerships', 'Speaking', 'Videos',
 ];
 
 const ABOUT_VENTURES = [
