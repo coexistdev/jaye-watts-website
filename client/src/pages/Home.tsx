@@ -975,16 +975,22 @@ export default function Home() {
             <div>
               <SectionHeader
                 eyebrow="About Jaye"
-                headline="Twenty years of culture-making, condensed into one strategic partnership."
+                headline="Building technology, culture, and human connection into lasting impact."
               />
               <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'var(--ink-muted)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
-                Jaye "Letta J" Watts is an award-winning recording artist, gaming CEO, hospitality professional, experiential marketer, and media personality. She has spent two decades at the intersection of culture and commerce, building brands that communities actually claim as their own.
+                Jaye "Letta J" Watts is a founder, CEO, technology innovator, award-winning recording artist, hospitality executive, and media personality whose career has been built at the intersection of technology, culture, and human connection. Over the past two decades, she has transformed ideas into companies, communities into movements, and experiences into measurable impact.
               </p>
               <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'var(--ink-muted)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
-                Her work spans Fortune 500 brand strategy, independent venture building, keynote speaking, and executive advisory. As a James Beard Award-winning executive chef and captain, she brings a rare depth of craft and cultural fluency, always guided by the same principle: authentic cultural intelligence creates competitive advantage that data alone cannot replicate.
+                From keynote stages in Silicon Valley to audiences in Japan, Jaye has partnered with Fortune 500 brands, startups, nonprofits, creators, and global organizations to help them build stronger communities through innovation, storytelling, and experiential engagement. Her work spans technology, gaming, hospitality, entertainment, behavioral intelligence, media, and brand strategy, giving her a uniquely multidisciplinary perspective that few leaders possess.
               </p>
               <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'var(--ink-muted)', lineHeight: 1.8, marginBottom: '2rem' }}>
-                When you partner with Jaye, you're not hiring a consultant. You're gaining access to a network, a perspective, and a track record built across industries, communities, and cultural moments that most brands spend years trying to reach.
+               Before becoming a founder, Jaye built her career in world-class hospitality as an executive chef and later as a captain at a Three Michelin Star restaurant recognized with a James Beard Award. That experience shaped the philosophy she carries into every venture today: extraordinary experiences are intentionally designed around people.
+              </p>
+              <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'var(--ink-muted)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+                Today, as Founder and CEO of Coexist, Inc., Jaye is building behavioral intelligence technology that helps brands, creators, and communities discover one another, engage more meaningfully, and create measurable real-world impact. Whether designing products, advising executives, leading partnerships, or speaking on international stages, her work consistently blends innovation with authentic human connection.
+              </p>
+              <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'var(--ink-muted)', lineHeight: 1.8, marginBottom: '2rem' }}>
+                Partnering with Jaye means gaining a builder with an uncommon perspective shaped by leadership across technology, entrepreneurship, hospitality, entertainment, and media. Her ability to connect industries, identify opportunity, and create meaningful experiences enables organizations to gain access to a network, a perspective, and a track record that most brands spend years trying to reach.
               </p>
               <button onClick={() => scrollToId('contact')} className="btn-primary">Start a Partnership Conversation</button>
             </div>
