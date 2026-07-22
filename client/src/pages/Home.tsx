@@ -309,7 +309,7 @@ export default function Home() {
       {/* ══ SPEAKING ══ */}
       <section id="speaking" style={{ position: 'relative', padding: '7rem 0', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0 }}>
-          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&q=80" alt="Speaking" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.28)' }} />
+          <img src="/manus-storage/jayetedtalkwide_3b9f0a55.PNG" alt="Jaye Watts on the TED stage" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center', filter: 'brightness(0.32)' }} />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, oklch(0.06 0.003 60 / 90%) 0%, oklch(0.06 0.003 60 / 40%) 100%)' }} />
         </div>
         <div className="container" style={{ position: 'relative' }}>
