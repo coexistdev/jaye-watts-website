@@ -59,7 +59,7 @@ const CONFERENCES = [
 
 const INDUSTRIES = [
   'Brand Strategy', 'Technology', 'Behavioral Intelligence', 'Community Building',
-  'Experiential Marketing', 'Gaming', 'Hospitality', 'Storytelling',
+  'Experiential Marketing', 'Gaming, Tech & AI', 'Hospitality', 'Storytelling',
   'Strategic Partnerships', 'Innovation', 'Keynote Speaking', 'Product Development',
   'Creator Economy', 'Artificial Intelligence', 'Entertainment',
 ];
