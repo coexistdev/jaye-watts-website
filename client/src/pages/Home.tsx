@@ -12,14 +12,14 @@ const STATS = [
 
 const CAPABILITIES = [
   'Brand Strategy', 'Cultural Intelligence', 'Partnership Architecture',
-  'Gaming & Esports', 'Wine & Hospitality', 'Music & Entertainment',
+  'Gaming, Tech & AI', 'Wine & Hospitality', 'Music & Entertainment',
   'Experiential Marketing', 'TV & Media', 'Community Building',
   'Keynote Speaking', 'Executive Advisory', 'Product Development',
 ];
 
 const WORK_ITEMS = [
   {
-    category: 'Gaming & Esports',
+    category: 'Gaming, Tech & AI',
     title: 'Building the Bridge Between Gaming Culture and Mainstream Brands',
     desc: 'Architected brand entry strategies for Fortune 500 companies entering the gaming space.',
     img: '/manus-storage/WebOptimized-2882_5013cc18.jpg',
