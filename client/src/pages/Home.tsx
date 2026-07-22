@@ -51,10 +51,10 @@ const SPEAKING_TOPICS = [
 ];
 
 const CONFERENCES = [
-  { name: 'SXSW', label: 'Keynote' }, { name: 'Cannes Lions', label: 'Speaker' },
-  { name: 'CES', label: 'Panelist' }, { name: 'Forbes CMO Summit', label: 'Featured' },
-  { name: 'Ad Age Next', label: 'Keynote' }, { name: 'Essence Festival', label: 'Speaker' },
-  { name: 'GDC', label: 'Panelist' }, { name: 'Fast Company Innovation', label: 'Featured' },
+  { name: 'NYC Office of the Mayor', label: 'Keynote' }, { name: 'AI Summit', label: 'Keynote' },
+  { name: 'Microsoft Discovery Day', label: 'Keynote' }, { name: 'Adweek', label: 'Panelist' },
+  { name: 'Women Impact Tech', label: 'Panelist' }, { name: 'GDC', label: 'Producer' },
+  { name: 'Stanford GSB', label: 'Cohort' }, { name: 'BBC News', label: 'Featured' },
 ];
 
 const INDUSTRIES = [
@@ -917,7 +917,7 @@ export default function Home() {
               <em style={{ color: 'var(--gold)' }}>Keynotes that drive action.</em>
             </h2>
             <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'oklch(0.62 0.005 65)', lineHeight: 1.75, marginBottom: '2rem' }}>
-              From SXSW to Cannes Lions, Jaye delivers conversations on culture, brand strategy, gaming, entrepreneurship, and the future of consumer connection that leave audiences with new frameworks, not just inspiration.
+              From the NYC Office of the Mayor to the AI Summit, Jaye delivers conversations on culture, brand strategy, gaming, entrepreneurship, and the future of consumer connection that leave audiences with new frameworks, not just inspiration.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.875rem' }}>
               <button onClick={() => scrollToId('contact')} className="btn-primary">Book Jaye to Speak</button>
@@ -992,8 +992,13 @@ export default function Home() {
                 Today, as Founder and CEO of Coexist, Inc., Jaye is building behavioral intelligence technology that helps brands, creators, and communities discover one another, engage more meaningfully, and create measurable real-world impact. Whether designing products, advising executives, leading partnerships, or speaking on international stages, her work consistently blends innovation with authentic human connection.
               </p>
               <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'var(--ink-muted)', lineHeight: 1.8, marginBottom: '2rem' }}>
-                Partnering with Jaye means gaining a builder with an uncommon perspective shaped by leadership across technology, entrepreneurship, hospitality, entertainment, and media. Her ability to connect industries, identify opportunity, and create meaningful experiences enables organizations to gain access to a network, a perspective, and a track record that most brands spend years trying to reach.
-              </p>
+               Partnering with Jaye means gaining a builder with an uncommon perspective shaped by leadership across technology, entrepreneurship, hospitality, entertainment, and media. Her ability to connect industries, identify opportunity, and create meaningful experiences enables organizations to gain access to a network, a perspective, and a track record that most brands spend years trying to reach.
+             </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem 1.5rem', marginBottom: '2rem', paddingTop: '1rem', borderTop: '1px solid oklch(0 0 0 / 10%)' }}>
+                {['Stanford GSB High-Potential Women Leaders', 'James Beard Award', 'Certified Sommelier', 'Grammy-Nominated Artist', 'Netflix Featured'].map(cred => (
+                  <span key={cred} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.48rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--ink-muted)' }}>{cred}</span>
+                ))}
+              </div>
               <button onClick={() => scrollToId('contact')} className="btn-primary">Start a Partnership Conversation</button>
             </div>
             <div>
