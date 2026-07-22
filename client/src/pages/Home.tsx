@@ -65,7 +65,7 @@ const INDUSTRIES = [
 ];
 
 // ── MEDIA CENTER DATA ──────────────────────────────────────────────────────────
-type MediaCategory = 'All' | 'Television' | 'Publications' | 'Podcasts' | 'Gaming' | 'Technology' | 'Music & Entertainment' | 'Hospitality & Wine' | 'Brand Partnerships' | 'Speaking' | 'Videos';
+type MediaCategory = 'All' | 'Television' | 'Publications' | 'Podcasts' | 'Gaming' | 'Technology' | 'Music & Entertainment' | 'Hospitality & Wine' | 'Brand Partnerships' | 'Speaking' | 'Videos' | 'Industry Judge';
 
 interface MediaEntry {
   id: number;
@@ -436,7 +436,7 @@ const MEDIA_ENTRIES: MediaEntry[] = [
     description: 'Jaye\'s hospitality venture Proud Wineaux brings wine culture to new audiences, creating inclusive luxury experiences in the heart of New York City.',
     category: 'Hospitality & Wine',
     type: 'Venue Feature',
-    href: 'https://connect2local.com/l/2760/proud-wineaux-138-w-34th-st-5th-floor-new-york-ny',
+    href: 'https://www.proudwineaux.com',
     cta: 'Explore',
   },
   {
@@ -470,12 +470,22 @@ const MEDIA_ENTRIES: MediaEntry[] = [
     href: 'https://influencerdaily.com/coexist-game-house-brings-game-developers/',
     cta: 'Read',
   },
+  {
+    id: 38,
+    outlet: 'Somm Slam',
+    title: 'Somm Slam: Sommelier Judge',
+    description: 'The Somm Slam is a live, rapid-fire wine pairing and tasting competition that pits top sommeliers against one another. Competitors must blind taste wines, identify varietals, and race to pair them with surprise dishes to a panel of expert judges.',
+    category: 'Industry Judge' as MediaCategory,
+    type: 'Industry Judge',
+    href: 'https://www.youtube.com/watch?v=tLMrgfADd7I',
+    cta: 'Watch',
+  },
 ];
 
 const MEDIA_CATEGORIES: MediaCategory[] = [
   'All', 'Television', 'Publications', 'Podcasts', 'Gaming',
   'Technology', 'Music & Entertainment', 'Hospitality & Wine',
-  'Brand Partnerships', 'Speaking', 'Videos',
+  'Brand Partnerships', 'Speaking', 'Videos', 'Industry Judge',
 ];
 
 const ABOUT_VENTURES = [
