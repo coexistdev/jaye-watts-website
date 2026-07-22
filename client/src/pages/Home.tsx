@@ -65,7 +65,7 @@ const INDUSTRIES = [
 ];
 
 // ── MEDIA CENTER DATA ──────────────────────────────────────────────────────────
-type MediaCategory = 'All' | 'Television' | 'Publications' | 'Podcasts' | 'Gaming' | 'Technology' | 'Music & Entertainment' | 'Hospitality & Wine' | 'Brand Partnerships' | 'Speaking' | 'Videos' | 'Industry Judge';
+type MediaCategory = 'All' | 'Television' | 'Publications' | 'Podcasts' | 'Gaming' | 'Technology' | 'Music & Entertainment' | 'Hospitality & Wine' | 'Brand Partnerships' | 'Speaking' | 'Videos';
 
 interface MediaEntry {
   id: number;
@@ -329,6 +329,16 @@ const MEDIA_ENTRIES: MediaEntry[] = [
     cta: 'Watch',
   },
   {
+    id: 0,
+    outlet: 'Somm Slam',
+    title: 'Industry Judge',
+    description: 'The Somm Slam is a live, rapid-fire wine pairing and tasting competition that pits top sommeliers against one another. Competitors must blind taste wines, identify varietals, and race to pair them with surprise dishes before a panel of expert judges.',
+    category: 'Hospitality & Wine',
+    type: 'Sommelier Judge',
+    href: 'https://www.youtube.com/watch?v=tLMrgfADd7I',
+    cta: 'Watch',
+  },
+  {
     id: 24,
     outlet: 'Moutai',
     title: 'Moutai Brand Partnership',
@@ -470,20 +480,10 @@ const MEDIA_ENTRIES: MediaEntry[] = [
     href: 'https://influencerdaily.com/coexist-game-house-brings-game-developers/',
     cta: 'Read',
   },
-  {
-    id: 38,
-    outlet: 'Somm Slam',
-    title: 'Somm Slam: Sommelier Judge',
-    description: 'The Somm Slam is a live, rapid-fire wine pairing and tasting competition that pits top sommeliers against one another. Competitors must blind taste wines, identify varietals, and race to pair them with surprise dishes to a panel of expert judges.',
-    category: 'Industry Judge' as MediaCategory,
-    type: 'Industry Judge',
-    href: 'https://www.youtube.com/watch?v=tLMrgfADd7I',
-    cta: 'Watch',
-  },
 ];
 
 const MEDIA_CATEGORIES: MediaCategory[] = [
-  'All', 'Industry Judge', 'Television', 'Publications', 'Podcasts', 'Gaming',
+  'All', 'Television', 'Publications', 'Podcasts', 'Gaming',
   'Technology', 'Music & Entertainment', 'Hospitality & Wine',
   'Brand Partnerships', 'Speaking', 'Videos',
 ];
