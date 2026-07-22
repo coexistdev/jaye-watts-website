@@ -22,14 +22,14 @@ const WORK_ITEMS = [
     category: 'Gaming & Esports',
     title: 'Building the Bridge Between Gaming Culture and Mainstream Brands',
     desc: 'Architected brand entry strategies for Fortune 500 companies entering the gaming space.',
-    img: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=700&q=80',
+    img: '/manus-storage/WebOptimized-2882_5013cc18.jpg',
     tags: ['Strategy', 'Gaming', 'Brand'],
   },
   {
     category: 'Wine & Hospitality',
     title: 'Redefining Luxury Wine for a New Generation of Consumers',
     desc: 'Developed and launched a premium wine brand that speaks directly to multicultural audiences.',
-    img: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=700&q=80',
+    img: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=700&q=80',
     tags: ['Brand Launch', 'Wine', 'Culture'],
   },
   {
@@ -273,7 +273,7 @@ export default function Home() {
       <section id="featured-work" style={{ background: 'white', padding: '6rem 0' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '3rem' }}>
-            <SectionHeader eyebrow="Featured Work" headline="She doesn't advise brands. She builds them." />
+          <SectionHeader eyebrow="Featured Work" headline="She doesn't just advise brands, she builds them." />
             <a href="#" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--gold)', textDecoration: 'none', whiteSpace: 'nowrap', marginBottom: '3rem' }}>
               View All Work →
             </a>
