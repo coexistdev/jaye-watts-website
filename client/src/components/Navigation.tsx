@@ -1,25 +1,20 @@
-/**
- * Navigation — transparent over hero, transitions to frosted white on scroll.
- * Mobile: full-screen drawer.
- */
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'wouter';
+import { useEffect, useState } from 'react';
 
+// Design: Obsidian Editorial — transparent over hero, white on scroll.
+// Single-page anchor navigation — no routing, smooth scroll to chapters.
 const NAV_LINKS = [
-  { label: 'Why Partner', href: '/why-partner' },
-  { label: 'Portfolio',   href: '/portfolio' },
-  { label: 'Industries',  href: '/industries' },
-  { label: 'Spotlight',   href: '/spotlight' },
-  { label: 'Speaking',    href: '/speaking' },
-  { label: 'About',       href: '/about' },
-  { label: 'Downloads',   href: '/downloads' },
-  { label: 'Contact',     href: '/contact' },
+  { label: 'Why Partner', href: 'why-partner' },
+  { label: 'Work',        href: 'featured-work' },
+  { label: 'Speaking',    href: 'speaking' },
+  { label: 'Industries',  href: 'industries' },
+  { label: 'Media',       href: 'media' },
+  { label: 'About',       href: 'about' },
+  { label: 'Contact',     href: 'contact' },
 ];
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [location] = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -27,130 +22,133 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useEffect(() => { setMenuOpen(false); }, [location]);
+  const scrollTo = (id: string) => {
+    setMenuOpen(false);
+    if (id === 'top') { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+    const el = document.getElementById(id);
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - 64;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  };
 
-  const isHeroPage = location === '/';
-  const lightText = isHeroPage && !scrolled;
+  const lightText = !scrolled;
 
   return (
     <>
       <header
-        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
         style={{
-          background: scrolled ? 'oklch(0.995 0.004 80 / 0.96)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(16px)' : 'none',
-          borderBottom: scrolled ? '1px solid oklch(0.90 0.010 78)' : '1px solid transparent',
+          position: 'fixed',
+          top: 0, left: 0, right: 0,
+          zIndex: 100,
+          height: '64px',
+          display: 'flex',
+          alignItems: 'center',
+          background: scrolled ? 'oklch(1 0 0 / 96%)' : 'transparent',
+          backdropFilter: scrolled ? 'blur(14px)' : 'none',
+          borderBottom: scrolled ? '1px solid oklch(0.90 0.005 78)' : 'none',
+          transition: 'background 0.3s ease, border-color 0.3s ease',
         }}
       >
-        <div className="container flex items-center justify-between" style={{ height: '72px' }}>
-          {/* Brand mark + wordmark */}
-          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
-            <svg width="20" height="26" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 0H20V18C20 22.418 16.418 26 12 26C7.582 26 4 22.418 4 18V16H8V18C8 20.209 9.791 22 12 22C14.209 22 16 20.209 16 18V0Z" fill="oklch(0.72 0.13 72)"/>
-              <rect x="0" y="0" width="12" height="4" fill="oklch(0.72 0.13 72)"/>
-            </svg>
-            <span style={{
+        <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          {/* Wordmark */}
+          <button
+            onClick={() => scrollTo('top')}
+            style={{
+              background: 'none', border: 'none', padding: 0, cursor: 'pointer',
               fontFamily: 'var(--font-display)',
-              fontSize: '1.0625rem',
+              fontSize: '1.1rem',
               fontWeight: 400,
-              letterSpacing: '0.05em',
-              color: lightText ? 'oklch(0.97 0.008 75)' : 'oklch(0.10 0.005 60)',
-              transition: 'color 0.3s',
+              letterSpacing: '0.04em',
+              color: lightText ? 'oklch(0.97 0.008 75)' : 'var(--ink)',
+              transition: 'color 0.3s ease',
               whiteSpace: 'nowrap',
-            }}>
-              Jaye Watts
-            </span>
-          </Link>
+            }}
+          >
+            Jaye Watts
+          </button>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-7">
-            {NAV_LINKS.slice(0, 7).map(link => (
-              <Link
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '1.75rem' }} className="hidden lg:flex">
+            {NAV_LINKS.map(link => (
+              <button
                 key={link.href}
-                href={link.href}
+                onClick={() => scrollTo(link.href)}
                 style={{
+                  background: 'none', border: 'none', padding: 0, cursor: 'pointer',
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '0.58rem',
+                  fontSize: '0.55rem',
                   letterSpacing: '0.16em',
                   textTransform: 'uppercase',
-                  textDecoration: 'none',
-                  color: location === link.href
-                    ? 'oklch(0.72 0.13 72)'
-                    : lightText ? 'oklch(0.78 0.008 75)' : 'oklch(0.42 0.006 65)',
-                  transition: 'color 0.2s',
+                  color: lightText ? 'oklch(0.75 0.005 65)' : 'var(--ink-mid)',
+                  transition: 'color 0.2s ease',
                   whiteSpace: 'nowrap',
                 }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'oklch(0.72 0.13 72)'; }}
-                onMouseLeave={e => {
-                  if (location !== link.href) {
-                    (e.currentTarget as HTMLElement).style.color = lightText ? 'oklch(0.78 0.008 75)' : 'oklch(0.42 0.006 65)';
-                  }
-                }}
+                onMouseEnter={e => (e.currentTarget.style.color = lightText ? 'oklch(0.97 0.008 75)' : 'var(--ink)')}
+                onMouseLeave={e => (e.currentTarget.style.color = lightText ? 'oklch(0.75 0.005 65)' : 'var(--ink-mid)')}
               >
                 {link.label}
-              </Link>
+              </button>
             ))}
+            <button
+              onClick={() => scrollTo('contact')}
+              className="btn-primary"
+              style={{ fontSize: '0.55rem', padding: '0.5rem 1.2rem', marginLeft: '0.25rem' }}
+            >
+              Book a Conversation
+            </button>
           </nav>
 
-          {/* CTA + hamburger */}
-          <div className="flex items-center gap-4">
-            <Link href="/contact" className="hidden lg:inline-flex btn-primary" style={{ padding: '0.6rem 1.375rem', fontSize: '0.58rem' }}>
-              Book a Conversation
-            </Link>
-            <button
-              className="lg:hidden p-2"
-              onClick={() => setMenuOpen(o => !o)}
-              aria-label="Toggle menu"
-              style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}
-            >
-              {[0,1,2].map(i => (
-                <span key={i} style={{
-                  display: 'block',
-                  height: '1.5px',
-                  background: lightText ? 'oklch(0.97 0.008 75)' : 'oklch(0.10 0.005 60)',
-                  transition: 'all 0.25s',
-                  width: i === 1 ? (menuOpen ? '0' : '18px') : '22px',
-                  transform: menuOpen
-                    ? (i === 0 ? 'rotate(45deg) translate(3.5px, 3.5px)' : i === 2 ? 'rotate(-45deg) translate(3.5px, -3.5px)' : '')
-                    : 'none',
-                }} />
-              ))}
-            </button>
-          </div>
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setMenuOpen(o => !o)}
+            className="lg:hidden"
+            aria-label="Toggle menu"
+            style={{ background: 'none', border: 'none', padding: '0.5rem', cursor: 'pointer', display: 'flex', flexDirection: 'column', gap: '5px' }}
+          >
+            {[0,1,2].map(i => (
+              <span key={i} style={{
+                display: 'block',
+                width: i === 1 ? (menuOpen ? '0' : '18px') : '22px',
+                height: '1.5px',
+                background: lightText ? 'oklch(0.97 0.008 75)' : 'var(--ink)',
+                transition: 'all 0.25s',
+                transform: menuOpen ? (i === 0 ? 'rotate(45deg) translate(3.5px,3.5px)' : i === 2 ? 'rotate(-45deg) translate(3.5px,-3.5px)' : '') : 'none',
+              }} />
+            ))}
+          </button>
         </div>
       </header>
 
       {/* Mobile drawer */}
-      <div
-        className="fixed inset-0 z-40 lg:hidden transition-all duration-400"
-        style={{
-          background: 'oklch(0.06 0.003 60)',
-          opacity: menuOpen ? 1 : 0,
-          pointerEvents: menuOpen ? 'auto' : 'none',
-          transform: menuOpen ? 'translateX(0)' : 'translateX(100%)',
-        }}
-      >
-        <div className="flex flex-col justify-center h-full px-8 gap-6 pt-16">
-          {NAV_LINKS.map((link, i) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: '2.25rem',
-                fontWeight: 300,
-                color: location === link.href ? 'oklch(0.72 0.13 72)' : 'oklch(0.95 0.008 75)',
-                textDecoration: 'none',
-                transitionDelay: `${i * 40}ms`,
-              }}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Link href="/contact" className="btn-primary mt-4" style={{ alignSelf: 'flex-start' }}>
-            Book a Conversation
-          </Link>
-        </div>
+      <div style={{
+        position: 'fixed', inset: 0, zIndex: 99,
+        background: 'var(--obsidian)',
+        display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '2rem',
+        opacity: menuOpen ? 1 : 0,
+        pointerEvents: menuOpen ? 'auto' : 'none',
+        transform: menuOpen ? 'translateX(0)' : 'translateX(100%)',
+        transition: 'opacity 0.3s ease, transform 0.3s ease',
+      }} className="lg:hidden">
+        {NAV_LINKS.map(link => (
+          <button
+            key={link.href}
+            onClick={() => scrollTo(link.href)}
+            style={{
+              background: 'none', border: 'none', cursor: 'pointer',
+              fontFamily: 'var(--font-display)',
+              fontSize: '2rem',
+              fontWeight: 300,
+              color: 'oklch(0.97 0.008 75)',
+              letterSpacing: '0.02em',
+            }}
+          >
+            {link.label}
+          </button>
+        ))}
+        <button onClick={() => scrollTo('contact')} className="btn-primary" style={{ marginTop: '0.5rem' }}>
+          Book a Conversation
+        </button>
       </div>
     </>
   );

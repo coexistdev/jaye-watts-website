@@ -1,83 +1,79 @@
-import { Link } from 'wouter';
+// Design: Obsidian Editorial Footer — dark, clean, anchor scroll links
+function scrollToId(id: string) {
+  const el = document.getElementById(id);
+  if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 64, behavior: 'smooth' });
+}
 
-const col1 = [
-  { label: 'Why Partner', href: '/why-partner' },
-  { label: 'Industries',  href: '/industries' },
-  { label: 'Speaking',    href: '/speaking' },
-  { label: 'Downloads',   href: '/downloads' },
-];
-const col2 = [
-  { label: 'Portfolio',       href: '/portfolio' },
-  { label: 'In the Spotlight', href: '/spotlight' },
-  { label: 'About',           href: '/about' },
-  { label: 'Contact',         href: '/contact' },
+const FOOTER_LINKS = [
+  { label: 'Why Partner', id: 'why-partner' },
+  { label: 'Featured Work', id: 'featured-work' },
+  { label: 'Speaking', id: 'speaking' },
+  { label: 'Industries', id: 'industries' },
+  { label: 'Media & Press', id: 'media' },
+  { label: 'About', id: 'about' },
+  { label: 'Contact', id: 'contact' },
 ];
 
 export default function Footer() {
   return (
-    <footer style={{ background: 'oklch(0.06 0.003 60)', color: 'oklch(0.95 0.008 75)' }}>
-      <div className="container py-16 lg:py-20">
-        <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
+    <footer style={{ background: 'oklch(0.04 0.002 60)', padding: '4rem 0 2.5rem' }}>
+      <div className="container">
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '3rem', marginBottom: '3rem' }}>
+          {/* Brand */}
           <div>
-            <div className="flex items-center gap-2.5 mb-5">
-              <svg width="18" height="22" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 0H20V18C20 22.418 16.418 26 12 26C7.582 26 4 22.418 4 18V16H8V18C8 20.209 9.791 22 12 22C14.209 22 16 20.209 16 18V0Z" fill="oklch(0.72 0.13 72)"/>
-                <rect x="0" y="0" width="12" height="4" fill="oklch(0.72 0.13 72)"/>
-              </svg>
-              <span style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 400, letterSpacing: '0.04em' }}>
-                Jaye Watts
-              </span>
-            </div>
-            <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.8125rem', color: 'oklch(0.50 0.005 65)', lineHeight: 1.7, maxWidth: '260px' }}>
-              Strategic Brand Partner. Multidisciplinary strategist transforming attention into measurable business growth.
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 400, color: 'oklch(0.97 0.008 75)', letterSpacing: '0.04em', marginBottom: '1rem', display: 'block' }}
+            >
+              Jaye Watts
+            </button>
+            <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.45 0.005 65)', lineHeight: 1.7, maxWidth: '260px' }}>
+              Strategic brand partner. Cultural intelligence. Twenty years at the intersection of culture and commerce.
             </p>
-            <div className="flex gap-5 mt-6">
-              {['LinkedIn', 'Instagram', 'Twitter / X'].map(s => (
-                <a key={s} href="#" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.45 0.005 65)', textDecoration: 'none' }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'oklch(0.72 0.13 72)'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'oklch(0.45 0.005 65)'; }}
-                >{s}</a>
+          </div>
+          {/* Navigation */}
+          <div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'oklch(0.38 0.005 65)', marginBottom: '1.25rem' }}>Navigation</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {FOOTER_LINKS.map(link => (
+                <button
+                  key={link.id}
+                  onClick={() => scrollToId(link.id)}
+                  style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', textAlign: 'left', fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.50 0.005 65)', transition: 'color 0.2s' }}
+                  onMouseEnter={e => (e.currentTarget.style.color = 'oklch(0.97 0.008 75)')}
+                  onMouseLeave={e => (e.currentTarget.style.color = 'oklch(0.50 0.005 65)')}
+                >
+                  {link.label}
+                </button>
               ))}
             </div>
           </div>
-
-          <div className="grid grid-cols-2 gap-8">
-            <div className="space-y-3">
-              {col1.map(l => (
-                <Link key={l.href} href={l.href} style={{ display: 'block', fontFamily: 'var(--font-mono)', fontSize: '0.58rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.45 0.005 65)', textDecoration: 'none' }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'oklch(0.72 0.13 72)'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'oklch(0.45 0.005 65)'; }}
-                >{l.label}</Link>
-              ))}
-            </div>
-            <div className="space-y-3">
-              {col2.map(l => (
-                <Link key={l.href} href={l.href} style={{ display: 'block', fontFamily: 'var(--font-mono)', fontSize: '0.58rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.45 0.005 65)', textDecoration: 'none' }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'oklch(0.72 0.13 72)'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'oklch(0.45 0.005 65)'; }}
-                >{l.label}</Link>
-              ))}
-            </div>
-          </div>
-
+          {/* Contact */}
           <div>
-            <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.625rem', fontWeight: 300, lineHeight: 1.3, marginBottom: '1.25rem' }}>
-              Ready to transform your brand's impact?
-            </p>
-            <Link href="/contact" className="btn-primary">
-              Book a Conversation
-            </Link>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'oklch(0.38 0.005 65)', marginBottom: '1.25rem' }}>Connect</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {[
+                { label: 'Partnership Inquiries', href: 'mailto:hello@jayewatts.com' },
+                { label: 'Speaking Bookings', href: 'mailto:speaking@jayewatts.com' },
+                { label: 'Media Requests', href: 'mailto:media@jayewatts.com' },
+              ].map(item => (
+                <a key={item.label} href={item.href} style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.50 0.005 65)', textDecoration: 'none', transition: 'color 0.2s' }}
+                  onMouseEnter={e => (e.currentTarget.style.color = 'oklch(0.97 0.008 75)')}
+                  onMouseLeave={e => (e.currentTarget.style.color = 'oklch(0.50 0.005 65)')}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
-
-        <div style={{ height: '1px', background: 'oklch(0.72 0.13 72 / 0.15)', margin: '3rem 0 1.5rem' }} />
-        <div className="flex flex-col sm:flex-row justify-between gap-3">
-          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.12em', color: 'oklch(0.32 0.003 65)' }}>
-            &copy; {new Date().getFullYear()} Jaye "Letta J" Watts. All rights reserved.
-          </p>
-          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.12em', color: 'oklch(0.32 0.003 65)' }}>
-            Strategic Brand Partner
-          </p>
+        <div style={{ borderTop: '1px solid oklch(1 0 0 / 8%)', paddingTop: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.32 0.005 65)' }}>
+            © {new Date().getFullYear()} Jaye Watts. All rights reserved.
+          </span>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.32 0.005 65)' }}>
+            Strategic Brand Partner · Cultural Intelligence
+          </span>
         </div>
       </div>
     </footer>
