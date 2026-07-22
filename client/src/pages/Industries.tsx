@@ -1,148 +1,97 @@
-/**
- * Obsidian Editorial Theme — Industries
- */
 import { Link } from 'wouter';
 import PageLayout from '../components/PageLayout';
-import SectionHeader from '../components/SectionHeader';
 
-const industries = [
-  {
-    name: 'Gaming',
-    description: 'As founder of Coexist Gaming, Jaye has deep roots in gaming culture — from esports activations to brand integrations and community building. She understands how to connect brands authentically with the gaming community.',
-    highlights: ['Esports activations', 'Brand integrations', 'Community building', 'Gaming lifestyle'],
-    image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=700&q=80',
-  },
-  {
-    name: 'Music',
-    description: 'With a music career spanning multiple decades, Jaye brings authentic cultural credibility to music industry partnerships, artist collaborations, and entertainment brand strategy.',
-    highlights: ['Artist partnerships', 'Label strategy', 'Music marketing', 'Cultural credibility'],
-    image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=700&q=80',
-  },
-  {
-    name: 'Technology',
-    description: 'Bridging the gap between technology companies and mainstream consumer audiences through culturally intelligent marketing, community engagement, and strategic brand positioning.',
-    highlights: ['Consumer tech', 'B2B positioning', 'Product launches', 'Innovation narrative'],
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=700&q=80',
-  },
-  {
-    name: 'Hospitality',
-    description: 'Extensive hospitality industry experience spanning luxury hotels, experiential dining, and lifestyle brands — creating premium guest experiences and driving brand loyalty.',
-    highlights: ['Luxury hotels', 'Experiential dining', 'Brand loyalty', 'Premium experiences'],
-    image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=700&q=80',
-  },
-  {
-    name: 'Wine & Spirits',
-    description: 'As founder of Proud Wineaux, Jaye has transformed how diverse audiences engage with wine culture — bringing expertise in lifestyle marketing, community building, and distribution strategy.',
-    highlights: ['Lifestyle marketing', 'Diverse audiences', 'Distribution strategy', 'Brand building'],
-    image: 'https://images.unsplash.com/photo-1474722883778-792e7990302f?w=700&q=80',
-  },
-  {
-    name: 'Entertainment',
-    description: 'Deep entertainment industry relationships and experience spanning film, television, music, and live events — connecting brands with cultural moments that resonate.',
-    highlights: ['Film & TV', 'Live events', 'Brand integrations', 'Cultural moments'],
-    image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=700&q=80',
-  },
-  {
-    name: 'AI & Emerging Tech',
-    description: 'Navigating the rapidly evolving AI landscape to help brands understand, adopt, and communicate emerging technologies in ways that build trust and drive adoption.',
-    highlights: ['AI strategy', 'Tech adoption', 'Innovation narrative', 'Future positioning'],
-    image: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=700&q=80',
-  },
-  {
-    name: 'Luxury',
-    description: 'Understanding the nuances of luxury brand positioning, high-net-worth consumer engagement, and the premium experiences that define category leadership.',
-    highlights: ['Luxury positioning', 'HNW audiences', 'Premium experiences', 'Brand prestige'],
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80',
-  },
+const INDUSTRIES = [
+  { name: 'Gaming', description: 'Jaye built a gaming company before advising gaming brands. Her understanding of gaming culture, community, and commerce is not academic. It is operational.', img: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80', tags: ['Esports', 'Community', 'Brand Partnerships', 'Cultural Strategy'] },
+  { name: 'Music & Entertainment', description: 'As a musician and entertainment industry veteran, Jaye understands how culture is created, distributed, and monetized. She helps brands become part of the story, not just sponsors of it.', img: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80', tags: ['Artist Partnerships', 'Label Relations', 'Live Events', 'Sync Licensing'] },
+  { name: 'Technology & AI', description: 'From CES keynotes to AI advisory boards, Jaye bridges the gap between technology innovation and human cultural adoption. She helps tech brands communicate value to audiences that matter.', img: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80', tags: ['AI Strategy', 'Consumer Tech', 'B2B Technology', 'Innovation'] },
+  { name: 'Hospitality & Travel', description: 'A hospitality entrepreneur and certified sommelier, Jaye brings genuine expertise to brands in the hospitality, hotel, and travel space. She understands the luxury consumer and the experiential economy.', img: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80', tags: ['Luxury Hotels', 'Travel Brands', 'Experience Design', 'Lifestyle'] },
+  { name: 'Wine & Spirits', description: 'As founder of Proud Wineaux and a certified wine professional, Jaye brings authentic community and brand-building expertise to wine, spirits, and beverage brands seeking cultural relevance.', img: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80', tags: ['Wine Brands', 'Spirits', 'Community Building', 'Lifestyle Marketing'] },
+  { name: 'Sports & Fitness', description: 'Jaye\'s network spans professional sports, esports, and fitness communities. She helps sports brands connect authentically with the next generation of fans and consumers.', img: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&q=80', tags: ['Pro Sports', 'Esports', 'Fitness Brands', 'Athlete Partnerships'] },
+  { name: 'Consumer Goods & Retail', description: 'From product launches to retail activations, Jaye helps consumer brands understand and reach multicultural, gaming, and emerging audiences with authentic cultural intelligence.', img: 'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80', tags: ['Product Launch', 'Retail Strategy', 'Multicultural Marketing', 'Brand Building'] },
+  { name: 'Media & Publishing', description: 'With television appearances, podcast features, and editorial contributions, Jaye understands the media landscape from both sides. She helps media brands build community and brands build media presence.', img: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80', tags: ['Television', 'Digital Media', 'Publishing', 'Content Strategy'] },
 ];
 
 export default function Industries() {
   return (
     <PageLayout>
-      <section className="pt-32 pb-20 lg:pt-40 lg:pb-28" style={{ background: 'oklch(0.98 0.008 80)', borderBottom: '1px solid oklch(0.88 0.008 75)' }}>
-        <div className="container">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-4 mb-8 reveal">
-              <div className="gold-rule-solid" style={{ width: '40px' }} />
-              <span className="section-label">Industries</span>
+      {/* HERO */}
+      <section className="relative min-h-[55vh] flex items-end overflow-hidden" style={{ paddingBottom: '8vh' }}>
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1600&q=85" alt="" className="w-full h-full object-cover" style={{ filter: 'brightness(0.28)' }} />
+          <div className="absolute inset-0 overlay-bottom" />
+          <div className="absolute inset-0 overlay-left" />
+        </div>
+        <div className="relative container">
+          <div style={{ maxWidth: '640px' }}>
+            <div className="flex items-center gap-3 mb-6" style={{ opacity: 0, animation: 'fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s forwards' }}>
+              <span className="gold-line-short" />
+              <span className="label-mono" style={{ color: 'oklch(0.72 0.13 72)' }}>Industries</span>
             </div>
-            <h1 className="reveal" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 300, color: 'oklch(0.12 0.005 60)', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
-              Expertise across every sector that shapes culture.
+            <h1 className="display-hero" style={{ color: 'oklch(0.97 0.008 75)', opacity: 0, animation: 'fadeSlideUp 1s cubic-bezier(0.16,1,0.3,1) 0.35s forwards' }}>
+              One partner.<br />
+              <em style={{ color: 'oklch(0.72 0.13 72)', fontStyle: 'italic' }}>Every industry.</em>
             </h1>
-            <p className="mt-6 reveal" style={{ fontFamily: 'var(--font-sans)', fontSize: '1.0625rem', color: 'oklch(0.40 0.005 60)', lineHeight: 1.75, maxWidth: '560px', transitionDelay: '100ms' }}>
-              Jaye's multidisciplinary background spans 12+ industries, enabling her to identify cross-sector opportunities and bring fresh perspectives to complex brand challenges.
+            <p className="body-lg mt-6" style={{ color: 'oklch(0.65 0.005 65)', maxWidth: '520px', opacity: 0, animation: 'fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.55s forwards' }}>
+              Jaye's cross-industry fluency is not a feature. It is the entire value proposition. The connections between industries are where the most powerful brand opportunities live.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-20 lg:py-28" style={{ background: 'oklch(1 0 0)' }}>
+      {/* INDUSTRIES GRID */}
+      <section className="py-20 lg:py-28 bg-canvas">
         <div className="container">
           <div className="space-y-0">
-            {industries.map((ind, i) => (
+            {INDUSTRIES.map((ind, i) => (
               <div
                 key={ind.name}
-                className="reveal grid lg:grid-cols-2 gap-0"
+                className="reveal grid lg:grid-cols-12 gap-0"
                 style={{
+                  borderTop: '1px solid oklch(0.90 0.010 78)',
                   transitionDelay: `${i * 60}ms`,
-                  borderBottom: '1px solid oklch(0.88 0.008 75)',
                 }}
               >
-                <div
-                  className="p-8 lg:p-12"
-                  style={{ background: i % 2 === 0 ? 'oklch(0.98 0.008 80)' : 'oklch(1 0 0)' }}
-                >
-                  <span className="section-number">{String(i + 1).padStart(2, '0')}</span>
-                  <h2 className="mt-3" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 300, color: 'oklch(0.14 0.005 60)' }}>
-                    {ind.name}
-                  </h2>
-                  <p className="mt-4" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9375rem', color: 'oklch(0.40 0.005 60)', lineHeight: 1.7 }}>
-                    {ind.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mt-6">
-                    {ind.highlights.map((h) => (
-                      <span
-                        key={h}
-                        style={{
-                          fontFamily: 'var(--font-mono)',
-                          fontSize: '0.6rem',
-                          letterSpacing: '0.12em',
-                          textTransform: 'uppercase',
-                          color: 'oklch(0.40 0.005 60)',
-                          border: '1px solid oklch(0.88 0.008 75)',
-                          padding: '0.25rem 0.625rem',
-                        }}
-                      >
-                        {h}
-                      </span>
+                {/* Image */}
+                <div className="lg:col-span-4 img-zoom" style={{ aspectRatio: '16/10', overflow: 'hidden' }}>
+                  <img src={ind.img} alt={ind.name} className="w-full h-full object-cover" />
+                </div>
+                {/* Content */}
+                <div className="lg:col-span-8 p-8 lg:p-12 flex flex-col justify-center" style={{ background: i % 2 === 0 ? 'oklch(0.985 0.008 80)' : 'oklch(1 0 0)' }}>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'oklch(0.72 0.13 72)' }}>
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', fontWeight: 400, color: 'oklch(0.10 0.005 60)', lineHeight: 1.2 }}>{ind.name}</h2>
+                  </div>
+                  <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9375rem', color: 'oklch(0.42 0.006 65)', lineHeight: 1.75, maxWidth: '520px', marginBottom: '1.25rem' }}>{ind.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {ind.tags.map(t => (
+                      <span key={t} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '0.14em', textTransform: 'uppercase', padding: '0.3rem 0.75rem', border: '1px solid oklch(0.88 0.010 78)', color: 'oklch(0.55 0.006 65)' }}>{t}</span>
                     ))}
                   </div>
                 </div>
-                <div className="relative overflow-hidden" style={{ minHeight: '280px' }}>
-                  <img
-                    src={ind.image}
-                    alt={ind.name}
-                    className="w-full h-full object-cover"
-                    style={{ filter: 'brightness(0.6) saturate(0.8)' }}
-                  />
-                  <div className="absolute inset-0" style={{ background: 'oklch(0.08 0.003 60 / 0.3)' }} />
-                </div>
               </div>
             ))}
+            <div style={{ borderTop: '1px solid oklch(0.90 0.010 78)' }} />
           </div>
         </div>
       </section>
 
-      <section className="py-16 lg:py-20" style={{ background: 'oklch(0.95 0.010 78)', borderTop: '1px solid oklch(0.88 0.008 75)' }}>
-        <div className="container text-center">
-          <div className="reveal max-w-lg mx-auto">
-            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 300, color: 'oklch(0.14 0.005 60)' }}>
-              Your industry. Jaye's expertise.
-            </h3>
-            <p className="mt-4 mb-8" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9375rem', color: 'oklch(0.40 0.005 60)', lineHeight: 1.7 }}>
-              Don't see your industry listed? Jaye's cross-sector expertise applies to virtually any brand challenge.
+      {/* CTA */}
+      <section className="py-20 lg:py-28 bg-obsidian text-center">
+        <div className="container">
+          <div style={{ maxWidth: '560px', margin: '0 auto' }}>
+            <h2 className="display-xl reveal" style={{ color: 'oklch(0.97 0.008 75)' }}>
+              Your industry is next.
+            </h2>
+            <p className="body-lg mt-5 mb-10 reveal" style={{ color: 'oklch(0.55 0.005 65)', transitionDelay: '80ms' }}>
+              Whether you are in an industry listed above or operating at the intersection of several, Jaye brings the cross-industry intelligence to help you see and seize opportunities others miss.
             </p>
-            <Link href="/contact" className="btn-gold">Start a Conversation</Link>
+            <div className="flex flex-wrap justify-center gap-4 reveal" style={{ transitionDelay: '160ms' }}>
+              <Link href="/contact" className="btn-primary">Book a Conversation</Link>
+              <Link href="/portfolio" className="btn-outline-light">See the Portfolio</Link>
+            </div>
           </div>
         </div>
       </section>

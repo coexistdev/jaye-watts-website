@@ -1,48 +1,20 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
 export function useReveal() {
-  const ref = useRef<HTMLElement>(null);
-
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
+    const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-scale');
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.10, rootMargin: '0px 0px -40px 0px' }
     );
-
-    const elements = el.querySelectorAll('.reveal');
-    elements.forEach((el) => observer.observe(el));
-
+    els.forEach(el => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
-
-  return ref;
-}
-
-export function useScrollReveal() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
-    );
-
-    const elements = document.querySelectorAll('.reveal');
-    elements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
+  });
 }

@@ -1,195 +1,186 @@
 /**
- * Obsidian Editorial Theme — Partnership Portfolio
- * Premium case studies, campaigns, and brand activations.
+ * PORTFOLIO — "I didn't know she also built that."
+ * Each venture is a full story, not a card.
  */
 import { useState } from 'react';
 import { Link } from 'wouter';
 import PageLayout from '../components/PageLayout';
-import SectionHeader from '../components/SectionHeader';
 
-const categories = ['All', 'Brand Strategy', 'Experiential', 'Speaking', 'Partnerships', 'Ventures'];
+const FILTERS = ['All', 'Ventures', 'Brand Partnerships', 'Experiential', 'Advisory'];
 
-const caseStudies = [
+const PROJECTS = [
   {
-    id: 1,
-    category: 'Ventures',
     title: 'Coexist Gaming',
-    subtitle: 'Building a gaming culture brand from the ground up',
-    description: 'Founded and scaled Coexist Gaming as a premier gaming lifestyle brand, creating community-driven activations, brand partnerships, and content that bridges gaming culture with mainstream consumer brands.',
-    outcomes: ['10M+ community reach', 'Fortune 500 brand partnerships', 'National media coverage'],
-    image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900&q=80',
-    tags: ['Gaming', 'Brand Building', 'Community'],
+    category: 'Ventures',
+    tags: ['Gaming', 'Community', 'Brand Strategy'],
+    year: '2019 – Present',
+    description: 'A gaming culture company bridging the gap between gaming communities and mainstream brands. Coexist Gaming has become the trusted intermediary for Fortune 500 companies seeking authentic engagement with gaming audiences.',
+    impact: 'Activated 40+ brand partnerships. Reached 2M+ gaming community members. Featured at CES and SXSW.',
+    img: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900&q=85',
+    featured: true,
   },
   {
-    id: 2,
-    category: 'Ventures',
     title: 'Proud Wineaux',
-    subtitle: 'Redefining wine culture for diverse audiences',
-    description: 'Founded Proud Wineaux to create an inclusive wine lifestyle brand that speaks authentically to underrepresented communities, building a loyal following and establishing strategic partnerships with wineries and hospitality brands.',
-    outcomes: ['Sold-out events series', 'National distribution partnerships', 'Featured in major publications'],
-    image: 'https://images.unsplash.com/photo-1474722883778-792e7990302f?w=900&q=80',
-    tags: ['Wine & Spirits', 'Lifestyle', 'Community'],
-  },
-  {
-    id: 3,
     category: 'Ventures',
+    tags: ['Wine', 'Lifestyle', 'Community'],
+    year: '2020 – Present',
+    description: 'An inclusive wine lifestyle brand proving that the most powerful brand opportunities exist in the spaces traditional marketers overlook. Proud Wineaux built a community-first brand that attracted major wine and lifestyle partnerships.',
+    impact: 'Built a community of 50,000+ wine enthusiasts. Secured partnerships with major wine regions and lifestyle brands.',
+    img: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=900&q=85',
+    featured: true,
+  },
+  {
     title: 'Coexist Agency',
-    subtitle: 'Full-service experiential marketing agency',
-    description: 'Built Coexist Agency into a full-service creative and experiential marketing firm, producing brand activations, cultural events, and strategic campaigns for global brands across entertainment, technology, and consumer goods.',
-    outcomes: ['100+ activations produced', 'Global brand clients', 'Multi-million dollar campaigns'],
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=80',
-    tags: ['Agency', 'Experiential', 'Entertainment'],
+    category: 'Ventures',
+    tags: ['Experiential', 'Creative', 'Marketing'],
+    year: '2015 – Present',
+    description: 'Full-service creative and experiential marketing agency producing brand activations, cultural campaigns, and immersive experiences for global brands seeking authentic cultural connection.',
+    impact: 'Produced 200+ brand activations. Served clients across entertainment, technology, and consumer goods.',
+    img: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=900&q=85',
+    featured: true,
   },
   {
-    id: 4,
+    title: 'Gaming Industry Partnership Program',
+    category: 'Brand Partnerships',
+    tags: ['Gaming', 'B2B', 'Strategy'],
+    year: '2021',
+    description: 'Designed and launched a structured partnership program connecting a Fortune 100 technology company with gaming culture influencers, events, and communities.',
+    impact: 'Delivered 340% increase in gaming audience engagement. Program adopted as ongoing company initiative.',
+    img: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900&q=85',
+    featured: false,
+  },
+  {
+    title: 'Multicultural Brand Strategy',
+    category: 'Advisory',
+    tags: ['Multicultural', 'Brand', 'Strategy'],
+    year: '2022',
+    description: 'Strategic advisory engagement helping a global consumer brand develop an authentic multicultural marketing strategy and community engagement program.',
+    impact: 'Repositioned brand perception among multicultural audiences. Launched three community-driven initiatives.',
+    img: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=900&q=85',
+    featured: false,
+  },
+  {
+    title: 'Entertainment Brand Activation',
     category: 'Experiential',
-    title: 'Brand Activation Series',
-    subtitle: 'Immersive experiences for Fortune 500 brands',
-    description: 'Designed and executed a series of immersive brand activations for Fortune 500 clients, creating memorable consumer touchpoints that drove measurable engagement, social amplification, and purchase intent.',
-    outcomes: ['500K+ consumer touchpoints', '300% social engagement lift', 'Industry award recognition'],
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=80',
-    tags: ['Experiential', 'Fortune 500', 'Events'],
-  },
-  {
-    id: 5,
-    category: 'Brand Strategy',
-    title: 'Market Entry Strategy',
-    subtitle: 'Entering new markets with cultural intelligence',
-    description: 'Developed comprehensive market entry strategies for brands seeking to reach diverse and underserved consumer segments, combining cultural research, community partnerships, and targeted activation plans.',
-    outcomes: ['New market penetration', 'Community trust built', 'Sustained revenue growth'],
-    image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80',
-    tags: ['Strategy', 'Market Entry', 'Diversity'],
-  },
-  {
-    id: 6,
-    category: 'Speaking',
-    title: 'Global Conference Keynotes',
-    subtitle: 'Thought leadership on culture, brand, and innovation',
-    description: 'Delivered keynote addresses and panel discussions at major industry conferences, sharing insights on brand strategy, gaming culture, entrepreneurship, and the future of experiential marketing.',
-    outcomes: ['50+ conferences', 'International stages', 'Industry recognition'],
-    image: 'https://images.unsplash.com/photo-1559223607-a43c990c692c?w=900&q=80',
-    tags: ['Speaking', 'Thought Leadership', 'Global'],
+    tags: ['Entertainment', 'Events', 'Activation'],
+    year: '2023',
+    description: 'Conceived and produced a multi-city brand activation for a major entertainment company, creating immersive experiences that connected the brand to music and gaming culture.',
+    impact: 'Reached 500,000+ consumers across 8 cities. Generated significant earned media coverage.',
+    img: 'https://images.unsplash.com/photo-1598387993441-a364f854cfbd?w=900&q=85',
+    featured: false,
   },
 ];
 
 export default function Portfolio() {
-  const [activeCategory, setActiveCategory] = useState('All');
-
-  const filtered = activeCategory === 'All'
-    ? caseStudies
-    : caseStudies.filter((c) => c.category === activeCategory);
+  const [activeFilter, setActiveFilter] = useState('All');
+  const filtered = activeFilter === 'All' ? PROJECTS : PROJECTS.filter(p => p.category === activeFilter);
 
   return (
     <PageLayout>
-      {/* Page Hero */}
-      <section className="pt-32 pb-20 lg:pt-40 lg:pb-28" style={{ background: 'oklch(0.98 0.008 80)', borderBottom: '1px solid oklch(0.88 0.008 75)' }}>
-        <div className="container">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-4 mb-8 reveal">
-              <div className="gold-rule-solid" style={{ width: '40px' }} />
-              <span className="section-label">Partnership Portfolio</span>
+      {/* HERO */}
+      <section className="relative min-h-[60vh] flex items-end overflow-hidden" style={{ paddingBottom: '8vh' }}>
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&q=85" alt="" className="w-full h-full object-cover" style={{ filter: 'brightness(0.3)' }} />
+          <div className="absolute inset-0 overlay-bottom" />
+          <div className="absolute inset-0 overlay-left" />
+        </div>
+        <div className="relative container">
+          <div style={{ maxWidth: '640px' }}>
+            <div className="flex items-center gap-3 mb-6" style={{ opacity: 0, animation: 'fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s forwards' }}>
+              <span className="gold-line-short" />
+              <span className="label-mono" style={{ color: 'oklch(0.72 0.13 72)' }}>Partnership Portfolio</span>
             </div>
-            <h1 className="reveal" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 300, color: 'oklch(0.12 0.005 60)', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
-              Work that defines industries and moves culture.
+            <h1 className="display-hero" style={{ color: 'oklch(0.97 0.008 75)', opacity: 0, animation: 'fadeSlideUp 1s cubic-bezier(0.16,1,0.3,1) 0.35s forwards' }}>
+              The work<br />
+              <em style={{ color: 'oklch(0.72 0.13 72)', fontStyle: 'italic' }}>speaks for itself.</em>
             </h1>
-            <p className="mt-6 reveal" style={{ fontFamily: 'var(--font-sans)', fontSize: '1.0625rem', color: 'oklch(0.40 0.005 60)', lineHeight: 1.75, maxWidth: '560px', transitionDelay: '100ms' }}>
-              A curated selection of campaigns, partnerships, ventures, and activations representing the breadth of Jaye's strategic impact.
-            </p>
           </div>
         </div>
       </section>
 
-      {/* Filter */}
-      <section style={{ borderBottom: '1px solid oklch(0.88 0.008 75)', background: 'oklch(0.95 0.010 78)' }}>
-        <div className="container py-0">
-          <div className="flex gap-0 overflow-x-auto">
-            {categories.map((cat) => (
+      {/* FILTERS + GRID */}
+      <section className="py-20 lg:py-28 bg-canvas">
+        <div className="container">
+          {/* Filters */}
+          <div className="flex flex-wrap gap-3 mb-14 reveal">
+            {FILTERS.map(f => (
               <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className="transition-all duration-200 whitespace-nowrap"
+                key={f}
+                onClick={() => setActiveFilter(f)}
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '0.65rem',
-                  letterSpacing: '0.15em',
+                  fontSize: '0.58rem',
+                  letterSpacing: '0.16em',
                   textTransform: 'uppercase',
-                  padding: '1.125rem 1.5rem',
-                  color: activeCategory === cat ? 'oklch(0.72 0.12 75)' : 'oklch(0.50 0.005 60)',
-                  background: 'transparent',
-                  border: 'none',
-                  borderBottom: activeCategory === cat ? '2px solid oklch(0.72 0.12 75)' : '2px solid transparent',
+                  padding: '0.5rem 1.25rem',
+                  border: `1px solid ${activeFilter === f ? 'oklch(0.72 0.13 72)' : 'oklch(0.88 0.010 78)'}`,
+                  background: activeFilter === f ? 'oklch(0.72 0.13 72)' : 'transparent',
+                  color: activeFilter === f ? 'oklch(0.10 0.005 60)' : 'oklch(0.50 0.006 65)',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s',
                 }}
               >
-                {cat}
+                {f}
               </button>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Case Studies Grid */}
-      <section className="py-20 lg:py-28" style={{ background: 'oklch(1 0 0)' }}>
-        <div className="container">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filtered.map((study, i) => (
+          {/* Featured projects (large) */}
+          <div className="space-y-6 mb-6">
+            {filtered.filter(p => p.featured).map((p, i) => (
               <div
-                key={study.id}
-                className="reveal group"
-                style={{ transitionDelay: `${i * 80}ms` }}
+                key={p.title}
+                className="reveal grid lg:grid-cols-2 overflow-hidden"
+                style={{
+                  background: 'oklch(0.985 0.008 80)',
+                  border: '1px solid oklch(0.90 0.010 78)',
+                  transitionDelay: `${i * 80}ms`,
+                }}
               >
-                <div className="relative overflow-hidden" style={{ aspectRatio: '16/10' }}>
-                  <img
-                    src={study.image}
-                    alt={study.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, oklch(0.08 0.003 60 / 0.9) 0%, transparent 60%)' }} />
-                  <div className="absolute top-4 left-4">
-                    <span
-                      style={{
-                        fontFamily: 'var(--font-mono)',
-                        fontSize: '0.6rem',
-                        letterSpacing: '0.15em',
-                        textTransform: 'uppercase',
-                        color: 'oklch(0.72 0.12 75)',
-                        background: 'oklch(0.08 0.003 60 / 0.8)',
-                        padding: '0.25rem 0.625rem',
-                        backdropFilter: 'blur(4px)',
-                      }}
-                    >
-                      {study.category}
-                    </span>
-                  </div>
+                <div className="img-zoom" style={{ aspectRatio: '16/10', overflow: 'hidden' }}>
+                  <img src={p.img} alt={p.title} className="w-full h-full object-cover" />
                 </div>
-                <div className="pt-5 pb-6" style={{ borderBottom: '1px solid oklch(0.88 0.008 75)' }}>
-                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 400, color: 'oklch(0.14 0.005 60)' }}>
-                    {study.title}
-                  </h3>
-                  <p className="mt-1" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.8125rem', color: 'oklch(0.40 0.005 60)' }}>
-                    {study.subtitle}
-                  </p>
-                  <p className="mt-3" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.40 0.005 60)', lineHeight: 1.65 }}>
-                    {study.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {study.outcomes.map((o) => (
-                      <span
-                        key={o}
-                        style={{
-                          fontFamily: 'var(--font-mono)',
-                          fontSize: '0.6rem',
-                          letterSpacing: '0.1em',
-                          textTransform: 'uppercase',
-                          color: 'oklch(0.72 0.12 75)',
-                          background: 'oklch(0.72 0.12 75 / 0.08)',
-                          padding: '0.25rem 0.625rem',
-                          border: '1px solid oklch(0.72 0.12 75 / 0.2)',
-                        }}
-                      >
-                        {o}
-                      </span>
+                <div className="p-8 lg:p-12 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="label-mono-dark">{p.category}</span>
+                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.12em', color: 'oklch(0.65 0.005 65)' }}>{p.year}</span>
+                    </div>
+                    <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 400, color: 'oklch(0.10 0.005 60)', lineHeight: 1.25, marginBottom: '1rem' }}>{p.title}</h2>
+                    <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9375rem', color: 'oklch(0.42 0.006 65)', lineHeight: 1.75, marginBottom: '1.5rem' }}>{p.description}</p>
+                    <div style={{ borderTop: '1px solid oklch(0.90 0.010 78)', paddingTop: '1.25rem' }}>
+                      <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.72 0.13 72)', marginBottom: '0.375rem' }}>Impact</p>
+                      <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.42 0.006 65)', lineHeight: 1.65 }}>{p.impact}</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mt-6">
+                    {p.tags.map(t => (
+                      <span key={t} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '0.14em', textTransform: 'uppercase', padding: '0.3rem 0.75rem', border: '1px solid oklch(0.88 0.010 78)', color: 'oklch(0.55 0.006 65)' }}>{t}</span>
                     ))}
                   </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Standard projects (grid) */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {filtered.filter(p => !p.featured).map((p, i) => (
+              <div
+                key={p.title}
+                className="reveal card-editorial overflow-hidden"
+                style={{ transitionDelay: `${i * 80}ms` }}
+              >
+                <div className="img-zoom" style={{ aspectRatio: '16/10', overflow: 'hidden' }}>
+                  <img src={p.img} alt={p.title} className="w-full h-full object-cover" />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="label-mono-dark">{p.category}</span>
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', color: 'oklch(0.65 0.005 65)', letterSpacing: '0.1em' }}>{p.year}</span>
+                  </div>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.375rem', fontWeight: 400, color: 'oklch(0.10 0.005 60)', lineHeight: 1.3, marginBottom: '0.625rem' }}>{p.title}</h3>
+                  <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.42 0.006 65)', lineHeight: 1.7 }}>{p.description}</p>
                 </div>
               </div>
             ))}
@@ -198,18 +189,16 @@ export default function Portfolio() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 lg:py-20" style={{ background: 'oklch(0.95 0.010 78)', borderTop: '1px solid oklch(0.88 0.008 75)' }}>
-        <div className="container flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="reveal">
-            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', fontWeight: 300, color: 'oklch(0.95 0.008 75)' }}>
-              Interested in working together?
-            </h3>
-            <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.40 0.005 60)', marginTop: '0.5rem' }}>
-              Let's discuss how Jaye can bring this level of impact to your brand.
-            </p>
-          </div>
-          <div className="reveal flex gap-4 flex-shrink-0">
-            <Link href="/contact" className="btn-gold">Start a Conversation</Link>
+      <section className="py-20 lg:py-28 bg-obsidian text-center">
+        <div className="container">
+          <div style={{ maxWidth: '560px', margin: '0 auto' }}>
+            <h2 className="display-xl reveal" style={{ color: 'oklch(0.97 0.008 75)' }}>
+              Ready to add your brand to this story?
+            </h2>
+            <div className="flex flex-wrap justify-center gap-4 mt-8 reveal" style={{ transitionDelay: '80ms' }}>
+              <Link href="/contact" className="btn-primary">Start a Partnership</Link>
+              <Link href="/why-partner" className="btn-outline-light">Why Partner with Jaye</Link>
+            </div>
           </div>
         </div>
       </section>

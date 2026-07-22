@@ -1,218 +1,192 @@
 /**
- * Obsidian Editorial Theme — Contact
- * Dedicated inquiry forms for different partnership types.
+ * CONTACT — "The right conversation changes everything."
+ * Not a form. An invitation.
  */
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { toast } from 'sonner';
 import PageLayout from '../components/PageLayout';
 
-const inquiryTypes = [
-  { id: 'brand-partnership', label: 'Brand Partnership' },
-  { id: 'speaking', label: 'Speaking Engagement' },
-  { id: 'consulting', label: 'Consulting' },
-  { id: 'advisory', label: 'Advisory' },
-  { id: 'media', label: 'Media Inquiry' },
-  { id: 'investment', label: 'Investment Opportunity' },
+const INQUIRY_TYPES = [
+  { value: 'partnership', label: 'Brand Partnership' },
+  { value: 'advisory', label: 'Strategic Advisory' },
+  { value: 'speaking', label: 'Speaking Engagement' },
+  { value: 'media', label: 'Media / Press Inquiry' },
+  { value: 'other', label: 'Other' },
 ];
 
-interface FormData {
-  name: string;
-  title: string;
-  company: string;
-  email: string;
-  phone: string;
-  inquiryType: string;
-  message: string;
-}
-
 export default function Contact() {
-  const [activeType, setActiveType] = useState('brand-partnership');
-  const { register, handleSubmit, reset, formState: { isSubmitting } } = useForm<FormData>();
+  const [form, setForm] = useState({ name: '', company: '', email: '', type: '', message: '' });
+  const [submitted, setSubmitted] = useState(false);
 
-  const onSubmit = async (data: FormData) => {
-    await new Promise((r) => setTimeout(r, 1000));
-    toast.success('Your inquiry has been received. Jaye\'s team will be in touch within 48 hours.');
-    reset();
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
   };
 
   return (
     <PageLayout>
-      <section className="pt-32 pb-20 lg:pt-40 lg:pb-28" style={{ background: 'oklch(0.98 0.008 80)', borderBottom: '1px solid oklch(0.88 0.008 75)' }}>
+      {/* HERO */}
+      <section className="py-24 lg:py-32" style={{ background: 'oklch(0.985 0.008 80)', borderBottom: '1px solid oklch(0.90 0.010 78)' }}>
         <div className="container">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-4 mb-8 reveal">
-              <div className="gold-rule-solid" style={{ width: '40px' }} />
-              <span className="section-label">Contact</span>
+          <div className="grid lg:grid-cols-12 gap-8 items-end">
+            <div className="lg:col-span-6">
+              <div className="flex items-center gap-3 mb-6 reveal">
+                <span className="gold-line-short" />
+                <span className="label-mono-dark">Contact</span>
+              </div>
+              <h1 className="display-hero reveal" style={{ color: 'oklch(0.10 0.005 60)', transitionDelay: '80ms' }}>
+                The right conversation<br />
+                <em style={{ color: 'oklch(0.52 0.12 72)', fontStyle: 'italic' }}>changes everything.</em>
+              </h1>
             </div>
-            <h1 className="reveal" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 300, color: 'oklch(0.12 0.005 60)', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
-              Begin a conversation.
-            </h1>
-            <p className="mt-6 reveal" style={{ fontFamily: 'var(--font-sans)', fontSize: '1.0625rem', color: 'oklch(0.40 0.005 60)', lineHeight: 1.75, maxWidth: '560px', transitionDelay: '100ms' }}>
-              Whether you're exploring a brand partnership, booking a keynote, or seeking strategic advisory, Jaye's team responds to all qualified inquiries within 48 hours.
-            </p>
+            <div className="lg:col-span-6 reveal" style={{ transitionDelay: '200ms' }}>
+              <p className="body-lg" style={{ color: 'oklch(0.42 0.006 65)', maxWidth: '440px' }}>
+                Whether you are exploring a brand partnership, seeking strategic advisory, booking a speaking engagement, or making a media inquiry — start here.
+              </p>
+              <p className="body-lg mt-4" style={{ color: 'oklch(0.42 0.006 65)', maxWidth: '440px' }}>
+                Jaye reviews every inquiry personally and responds within 48 hours.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 lg:py-28" style={{ background: 'oklch(1 0 0)' }}>
+      {/* FORM + INFO */}
+      <section className="py-20 lg:py-28 bg-canvas">
         <div className="container">
-          <div className="grid lg:grid-cols-5 gap-16">
-            {/* Inquiry type selector */}
-            <div className="lg:col-span-2 reveal">
-              <p className="section-label mb-6">Inquiry Type</p>
-              <div className="space-y-2">
-                {inquiryTypes.map((type) => (
-                  <button
-                    key={type.id}
-                    onClick={() => setActiveType(type.id)}
-                    className="w-full text-left p-4 transition-all duration-200"
-                    style={{
-                      border: '1px solid',
-                      borderColor: activeType === type.id ? 'oklch(0.68 0.13 72)' : 'oklch(0.88 0.008 75)',
-                      background: activeType === type.id ? 'oklch(0.68 0.13 72 / 0.07)' : 'oklch(0.98 0.008 80)',
-                    }}
-                  >
-                    <span
-                      style={{
-                        fontFamily: 'var(--font-sans)',
-                        fontSize: '0.9375rem',
-                        color: activeType === type.id ? 'oklch(0.50 0.12 72)' : 'oklch(0.35 0.005 60)',
-                      }}
-                    >
-                      {type.label}
-                    </span>
-                  </button>
-                ))}
-              </div>
+          <div className="grid lg:grid-cols-12 gap-16">
+            {/* Form */}
+            <div className="lg:col-span-7 reveal">
+              {submitted ? (
+                <div style={{ padding: '4rem 3rem', border: '1px solid oklch(0.90 0.010 78)', background: 'oklch(0.985 0.008 80)', textAlign: 'center' }}>
+                  <span style={{ color: 'oklch(0.72 0.13 72)', fontSize: '2rem', display: 'block', marginBottom: '1.5rem' }}>◆</span>
+                  <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 400, color: 'oklch(0.10 0.005 60)', lineHeight: 1.3, marginBottom: '1rem' }}>
+                    Message received.
+                  </h2>
+                  <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9375rem', color: 'oklch(0.45 0.006 65)', lineHeight: 1.75 }}>
+                    Thank you for reaching out. Jaye will review your inquiry and respond within 48 hours.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.55 0.006 65)', display: 'block', marginBottom: '0.5rem' }}>Full Name *</label>
+                      <input
+                        type="text"
+                        required
+                        value={form.name}
+                        onChange={e => setForm({ ...form, name: e.target.value })}
+                        style={{ width: '100%', padding: '0.875rem 1rem', border: '1px solid oklch(0.88 0.010 78)', background: 'white', fontFamily: 'var(--font-sans)', fontSize: '0.9375rem', color: 'oklch(0.10 0.005 60)', outline: 'none', transition: 'border-color 0.2s' }}
+                        onFocus={e => { e.currentTarget.style.borderColor = 'oklch(0.72 0.13 72)'; }}
+                        onBlur={e => { e.currentTarget.style.borderColor = 'oklch(0.88 0.010 78)'; }}
+                        placeholder="Your name"
+                      />
+                    </div>
+                    <div>
+                      <label style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.55 0.006 65)', display: 'block', marginBottom: '0.5rem' }}>Company / Organization</label>
+                      <input
+                        type="text"
+                        value={form.company}
+                        onChange={e => setForm({ ...form, company: e.target.value })}
+                        style={{ width: '100%', padding: '0.875rem 1rem', border: '1px solid oklch(0.88 0.010 78)', background: 'white', fontFamily: 'var(--font-sans)', fontSize: '0.9375rem', color: 'oklch(0.10 0.005 60)', outline: 'none', transition: 'border-color 0.2s' }}
+                        onFocus={e => { e.currentTarget.style.borderColor = 'oklch(0.72 0.13 72)'; }}
+                        onBlur={e => { e.currentTarget.style.borderColor = 'oklch(0.88 0.010 78)'; }}
+                        placeholder="Your company"
+                      />
+                    </div>
+                  </div>
 
-              <div className="mt-10 pt-8" style={{ borderTop: '1px solid oklch(0.88 0.008 75)' }}>
-                <p className="section-label mb-4">Response Time</p>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.40 0.005 60)', lineHeight: 1.7 }}>
-                  All qualified inquiries receive a response within 48 business hours. For urgent matters, please indicate in your message.
-                </p>
-              </div>
+                  <div>
+                    <label style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.55 0.006 65)', display: 'block', marginBottom: '0.5rem' }}>Email Address *</label>
+                    <input
+                      type="email"
+                      required
+                      value={form.email}
+                      onChange={e => setForm({ ...form, email: e.target.value })}
+                      style={{ width: '100%', padding: '0.875rem 1rem', border: '1px solid oklch(0.88 0.010 78)', background: 'white', fontFamily: 'var(--font-sans)', fontSize: '0.9375rem', color: 'oklch(0.10 0.005 60)', outline: 'none', transition: 'border-color 0.2s' }}
+                      onFocus={e => { e.currentTarget.style.borderColor = 'oklch(0.72 0.13 72)'; }}
+                      onBlur={e => { e.currentTarget.style.borderColor = 'oklch(0.88 0.010 78)'; }}
+                      placeholder="your@email.com"
+                    />
+                  </div>
+
+                  <div>
+                    <label style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.55 0.006 65)', display: 'block', marginBottom: '0.5rem' }}>Nature of Inquiry *</label>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                      {INQUIRY_TYPES.map(t => (
+                        <button
+                          key={t.value}
+                          type="button"
+                          onClick={() => setForm({ ...form, type: t.value })}
+                          style={{
+                            padding: '0.625rem 0.875rem',
+                            border: `1px solid ${form.type === t.value ? 'oklch(0.72 0.13 72)' : 'oklch(0.88 0.010 78)'}`,
+                            background: form.type === t.value ? 'oklch(0.72 0.13 72)' : 'white',
+                            color: form.type === t.value ? 'oklch(0.10 0.005 60)' : 'oklch(0.50 0.006 65)',
+                            fontFamily: 'var(--font-mono)',
+                            fontSize: '0.55rem',
+                            letterSpacing: '0.12em',
+                            textTransform: 'uppercase',
+                            cursor: 'pointer',
+                            transition: 'all 0.2s',
+                            textAlign: 'left',
+                          }}
+                        >
+                          {t.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <label style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.55 0.006 65)', display: 'block', marginBottom: '0.5rem' }}>Tell Jaye About Your Vision *</label>
+                    <textarea
+                      required
+                      rows={6}
+                      value={form.message}
+                      onChange={e => setForm({ ...form, message: e.target.value })}
+                      style={{ width: '100%', padding: '0.875rem 1rem', border: '1px solid oklch(0.88 0.010 78)', background: 'white', fontFamily: 'var(--font-sans)', fontSize: '0.9375rem', color: 'oklch(0.10 0.005 60)', outline: 'none', resize: 'vertical', transition: 'border-color 0.2s' }}
+                      onFocus={e => { e.currentTarget.style.borderColor = 'oklch(0.72 0.13 72)'; }}
+                      onBlur={e => { e.currentTarget.style.borderColor = 'oklch(0.88 0.010 78)'; }}
+                      placeholder="Share your brand challenge, partnership idea, or speaking opportunity. The more context you provide, the more useful Jaye's response will be."
+                    />
+                  </div>
+
+                  <button type="submit" className="btn-primary w-full" style={{ justifyContent: 'center' }}>
+                    Send Inquiry
+                  </button>
+                </form>
+              )}
             </div>
 
-            {/* Form */}
-            <div className="lg:col-span-3 reveal" style={{ transitionDelay: '100ms' }}>
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="section-label block mb-2">Full Name *</label>
-                    <input
-                      {...register('name', { required: true })}
-                      placeholder="Your full name"
-                      className="w-full p-4 transition-colors duration-200"
-                      style={{
-                        background: 'oklch(0.98 0.008 80)',
-                        border: '1px solid oklch(0.88 0.008 75)',
-                        color: 'oklch(0.14 0.005 60)',
-                        fontFamily: 'var(--font-sans)',
-                        fontSize: '0.9375rem',
-                        outline: 'none',
-                      }}
-                      onFocus={(e) => { e.target.style.borderColor = 'oklch(0.68 0.13 72)'; }}
-                      onBlur={(e) => { e.target.style.borderColor = 'oklch(0.88 0.008 75)'; }}
-                    />
-                  </div>
-                  <div>
-                    <label className="section-label block mb-2">Title / Role</label>
-                    <input
-                      {...register('title')}
-                      placeholder="Chief Marketing Officer"
-                      className="w-full p-4 transition-colors duration-200"
-                      style={{
-                        background: 'oklch(0.98 0.008 80)',
-                        border: '1px solid oklch(0.88 0.008 75)',
-                        color: 'oklch(0.14 0.005 60)',
-                        fontFamily: 'var(--font-sans)',
-                        fontSize: '0.9375rem',
-                        outline: 'none',
-                      }}
-                      onFocus={(e) => { e.target.style.borderColor = 'oklch(0.68 0.13 72)'; }}
-                      onBlur={(e) => { e.target.style.borderColor = 'oklch(0.88 0.008 75)'; }}
-                    />
-                  </div>
+            {/* Info sidebar */}
+            <div className="lg:col-span-5 space-y-10 reveal" style={{ transitionDelay: '120ms' }}>
+              <div>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.72 0.13 72)', marginBottom: '0.75rem' }}>Response Time</p>
+                <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 400, color: 'oklch(0.10 0.005 60)', lineHeight: 1.4 }}>Within 48 hours for all inquiries. Jaye reads every message personally.</p>
+              </div>
+              <div style={{ borderTop: '1px solid oklch(0.90 0.010 78)', paddingTop: '2rem' }}>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.72 0.13 72)', marginBottom: '0.75rem' }}>What to Expect</p>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9375rem', color: 'oklch(0.42 0.006 65)', lineHeight: 1.75 }}>
+                  A direct, honest conversation about whether and how Jaye can help. No sales pitch. No gatekeeping. Just a genuine assessment of fit and opportunity.
+                </p>
+              </div>
+              <div style={{ borderTop: '1px solid oklch(0.90 0.010 78)', paddingTop: '2rem' }}>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.72 0.13 72)', marginBottom: '1rem' }}>Connect</p>
+                <div className="flex gap-4">
+                  {['LinkedIn', 'Instagram', 'Twitter / X'].map(platform => (
+                    <a
+                      key={platform}
+                      href="#"
+                      style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(0.50 0.006 65)', textDecoration: 'none', transition: 'color 0.2s' }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'oklch(0.52 0.12 72)'; }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'oklch(0.50 0.006 65)'; }}
+                    >
+                      {platform}
+                    </a>
+                  ))}
                 </div>
-
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="section-label block mb-2">Company / Organization *</label>
-                    <input
-                      {...register('company', { required: true })}
-                      placeholder="Your organization"
-                      className="w-full p-4"
-                      style={{
-                        background: 'oklch(0.98 0.008 80)',
-                        border: '1px solid oklch(0.88 0.008 75)',
-                        color: 'oklch(0.14 0.005 60)',
-                        fontFamily: 'var(--font-sans)',
-                        fontSize: '0.9375rem',
-                        outline: 'none',
-                      }}
-                      onFocus={(e) => { e.target.style.borderColor = 'oklch(0.68 0.13 72)'; }}
-                      onBlur={(e) => { e.target.style.borderColor = 'oklch(0.88 0.008 75)'; }}
-                    />
-                  </div>
-                  <div>
-                    <label className="section-label block mb-2">Email Address *</label>
-                    <input
-                      {...register('email', { required: true })}
-                      type="email"
-                      placeholder="your@company.com"
-                      className="w-full p-4"
-                      style={{
-                        background: 'oklch(0.98 0.008 80)',
-                        border: '1px solid oklch(0.88 0.008 75)',
-                        color: 'oklch(0.14 0.005 60)',
-                        fontFamily: 'var(--font-sans)',
-                        fontSize: '0.9375rem',
-                        outline: 'none',
-                      }}
-                      onFocus={(e) => { e.target.style.borderColor = 'oklch(0.68 0.13 72)'; }}
-                      onBlur={(e) => { e.target.style.borderColor = 'oklch(0.88 0.008 75)'; }}
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="section-label block mb-2">Message *</label>
-                  <textarea
-                    {...register('message', { required: true })}
-                    rows={6}
-                    placeholder="Please describe your partnership opportunity, speaking engagement, or inquiry in detail. Include relevant timelines, objectives, and any specific requirements."
-                    className="w-full p-4 resize-none"
-                    style={{
-                      background: 'oklch(0.98 0.008 80)',
-                      border: '1px solid oklch(0.88 0.008 75)',
-                      color: 'oklch(0.14 0.005 60)',
-                      fontFamily: 'var(--font-sans)',
-                      fontSize: '0.9375rem',
-                      outline: 'none',
-                      lineHeight: 1.65,
-                    }}
-                    onFocus={(e) => { e.target.style.borderColor = 'oklch(0.68 0.13 72)'; }}
-                    onBlur={(e) => { e.target.style.borderColor = 'oklch(0.88 0.008 75)'; }}
-                  />
-                </div>
-
-                <input type="hidden" {...register('inquiryType')} value={activeType} />
-
-                <div className="flex items-center justify-between pt-2">
-                  <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'oklch(0.50 0.005 60)' }}>
-                    * Required fields
-                  </p>
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="btn-gold"
-                    style={{ opacity: isSubmitting ? 0.7 : 1 }}
-                  >
-                    {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
-                  </button>
-                </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>

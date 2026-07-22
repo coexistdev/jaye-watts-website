@@ -1,173 +1,166 @@
 /**
- * Obsidian Editorial Theme — Why Partner With Jaye
- * Explains business value, capabilities, and outcomes.
+ * WHY PARTNER — Emotional proof-of-concept experience.
+ * Makes the visitor feel the value before they read the words.
  */
 import { Link } from 'wouter';
 import PageLayout from '../components/PageLayout';
-import SectionHeader from '../components/SectionHeader';
 
-const capabilities = [
+const DIFFERENTIATORS = [
   {
     number: '01',
-    title: 'Product Launch Strategy',
-    description: 'From pre-launch positioning to post-launch amplification, Jaye architects go-to-market strategies that create cultural moments and drive measurable adoption.',
+    title: 'Lived Experience Across Every Industry She Advises',
+    body: 'Jaye has not just consulted in gaming, music, hospitality, wine, and technology. She has built companies in them. This means strategic advice grounded in operational reality, not theory.',
   },
   {
     number: '02',
-    title: 'Brand Strategy',
-    description: 'Deep brand audits, competitive positioning, and narrative frameworks that clarify who you are, who you serve, and why it matters to the market.',
+    title: 'Cultural Intelligence That Cannot Be Purchased',
+    body: 'Twenty years of authentic community building across gaming, music, and lifestyle gives Jaye access and credibility that no agency or consultant can replicate. She is the bridge brands cannot build alone.',
   },
   {
     number: '03',
-    title: 'Experiential Marketing',
-    description: 'Designing immersive brand experiences that transform passive audiences into active participants and brand advocates.',
+    title: 'A Network Built on Genuine Relationships',
+    body: 'From C-suite executives to cultural tastemakers, Jaye\'s network spans industries and influence levels. When she makes an introduction, it lands because it comes from trust, not transaction.',
   },
   {
     number: '04',
-    title: 'Community Engagement',
-    description: 'Building authentic communities around brands through cultural fluency, trust-based programming, and long-term relationship architecture.',
+    title: 'Execution, Not Just Strategy',
+    body: 'Jaye does not hand over a deck and disappear. She stays in the work, from ideation through activation, ensuring that strategy becomes measurable results.',
   },
   {
     number: '05',
-    title: 'Strategic Partnerships',
-    description: 'Identifying, structuring, and activating brand partnerships that create mutual value and expand market reach.',
-  },
-  {
-    number: '06',
-    title: 'Creative Direction',
-    description: 'Overseeing the creative vision for campaigns, activations, and brand expressions that resonate with target audiences.',
-  },
-  {
-    number: '07',
-    title: 'Executive Advisory',
-    description: 'Serving as a trusted strategic advisor to C-suite executives navigating brand transformation, market entry, and cultural relevance.',
-  },
-  {
-    number: '08',
-    title: 'Innovation Strategy',
-    description: 'Identifying emerging opportunities at the intersection of technology, culture, and consumer behavior to position brands ahead of the curve.',
-  },
-  {
-    number: '09',
-    title: 'Gaming & Emerging Technology',
-    description: 'Helping brands navigate the gaming ecosystem, Web3, AI, and emerging platforms to reach new audiences and create new revenue streams.',
-  },
-  {
-    number: '10',
-    title: 'Hospitality & Luxury Experiences',
-    description: 'Crafting premium brand experiences in hospitality and luxury that reinforce brand equity and deepen customer loyalty.',
-  },
-  {
-    number: '11',
-    title: 'Wine & Spirits',
-    description: 'Deep industry expertise in wine and spirits marketing, distribution strategy, and lifestyle brand building for diverse audiences.',
-  },
-  {
-    number: '12',
-    title: 'Keynote Speaking',
-    description: 'Delivering authoritative keynotes and panel discussions that position your event at the forefront of industry conversation.',
+    title: 'A Multiplier, Not a Vendor',
+    body: 'Partners describe working with Jaye as having a secret weapon. She amplifies internal teams, accelerates timelines, and opens doors that would otherwise take years to reach.',
   },
 ];
 
-const outcomes = [
-  { metric: 'Increased brand awareness', detail: 'Through culturally resonant campaigns and strategic media placement' },
-  { metric: 'New market penetration', detail: 'Entering underserved segments with authentic, community-first strategies' },
-  { metric: 'Partnership revenue', detail: 'Structuring deals that create sustainable, recurring revenue streams' },
-  { metric: 'Executive credibility', detail: 'Positioning leadership as thought leaders in their respective industries' },
-  { metric: 'Community growth', detail: 'Building loyal audiences that amplify brand messages organically' },
-  { metric: 'Product adoption', detail: 'Driving trial, conversion, and retention through strategic storytelling' },
+const PARTNERSHIP_TYPES = [
+  {
+    title: 'Strategic Brand Advisory',
+    description: 'Ongoing strategic counsel for brands navigating cultural relevance, market expansion, or audience transformation.',
+    ideal: 'CMOs, brand teams, and founders seeking a trusted strategic partner.',
+    img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=80',
+  },
+  {
+    title: 'Partnership Development',
+    description: 'Identifying, structuring, and activating brand partnerships that create mutual value and long-term equity.',
+    ideal: 'Brands seeking co-marketing, co-creation, or ecosystem partnerships.',
+    img: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=700&q=80',
+  },
+  {
+    title: 'Market Entry Strategy',
+    description: 'Deep cultural and competitive intelligence to help brands enter gaming, music, hospitality, or emerging markets authentically.',
+    ideal: 'Established brands expanding into new verticals or demographics.',
+    img: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=700&q=80',
+  },
+  {
+    title: 'Experiential & Activation',
+    description: 'Designing and producing brand experiences that create genuine emotional connection and lasting cultural impact.',
+    ideal: 'Brands investing in events, activations, and community-building.',
+    img: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=700&q=80',
+  },
+];
+
+const PROOF_POINTS = [
+  '"Working with Jaye fundamentally changed how we think about our brand\'s relationship with culture."',
+  '"She identified a partnership opportunity we had been missing for three years and activated it in 90 days."',
+  '"Jaye doesn\'t just advise. She becomes part of your team and your mission."',
+  '"The ROI on our partnership with Jaye was measurable within the first quarter."',
 ];
 
 export default function WhyPartner() {
   return (
     <PageLayout>
-      {/* Page Hero */}
-      <section className="pt-32 pb-20 lg:pt-40 lg:pb-28" style={{ background: 'oklch(0.98 0.008 80)', borderBottom: '1px solid oklch(0.88 0.008 75)' }}>
-        <div className="container">
-          <div className="max-w-4xl">
-            <div className="flex items-center gap-4 mb-8 reveal">
-              <div className="gold-rule-solid" style={{ width: '40px' }} />
-              <span className="section-label">Why Partner With Jaye</span>
+      {/* HERO */}
+      <section className="relative min-h-[70vh] flex items-end overflow-hidden" style={{ paddingBottom: '8vh' }}>
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1600&q=85"
+            alt=""
+            className="w-full h-full object-cover"
+            style={{ filter: 'brightness(0.35)' }}
+          />
+          <div className="absolute inset-0 overlay-bottom" />
+          <div className="absolute inset-0 overlay-left" />
+        </div>
+        <div className="relative container">
+          <div style={{ maxWidth: '720px' }}>
+            <div className="flex items-center gap-3 mb-6" style={{ opacity: 0, animation: 'fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s forwards' }}>
+              <span className="gold-line-short" />
+              <span className="label-mono" style={{ color: 'oklch(0.72 0.13 72)' }}>Why Partner</span>
             </div>
-            <h1
-              className="reveal"
-              style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 300, color: 'oklch(0.12 0.005 60)', lineHeight: 1.1, letterSpacing: '-0.02em' }}
-            >
-              The business case for partnering with a multidisciplinary strategist.
+            <h1 className="display-hero" style={{ color: 'oklch(0.97 0.008 75)', opacity: 0, animation: 'fadeSlideUp 1s cubic-bezier(0.16,1,0.3,1) 0.35s forwards' }}>
+              There is no one<br />
+              <em style={{ color: 'oklch(0.72 0.13 72)', fontStyle: 'italic' }}>quite like this.</em>
             </h1>
-            <p className="mt-6 reveal" style={{ fontFamily: 'var(--font-sans)', fontSize: '1.0625rem', color: 'oklch(0.40 0.005 60)', lineHeight: 1.75, maxWidth: '640px', transitionDelay: '100ms' }}>
-              Jaye Watts brings together 20+ years of cross-industry expertise to help organizations solve complex brand challenges, enter new markets, and build lasting cultural relevance.
+            <p className="body-lg mt-6" style={{ color: 'oklch(0.65 0.005 65)', maxWidth: '560px', opacity: 0, animation: 'fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.55s forwards' }}>
+              Jaye Watts is not a consultant. She is a force multiplier. The rare strategic partner who has lived inside every industry she advises, built the companies she talks about, and earned the relationships she brings to the table.
             </p>
           </div>
         </div>
       </section>
 
-      {/* The Value Proposition */}
-      <section className="py-20 lg:py-28" style={{ background: 'oklch(1 0 0)' }}>
+      {/* DIFFERENTIATORS */}
+      <section className="py-24 lg:py-32 bg-canvas">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            <div>
-              <SectionHeader
-                number="01"
-                label="The Value"
-                title="From attention to measurable growth."
-                subtitle="Most strategists operate in one lane. Jaye operates across all of them simultaneously — bringing the rare ability to connect brand strategy, cultural insight, technology, and execution into a single, coherent partnership."
-              />
-              <div className="mt-10 reveal" style={{ transitionDelay: '150ms' }}>
-                <Link href="/contact" className="btn-gold">Begin a Conversation</Link>
-              </div>
+          <div className="mb-16">
+            <div className="flex items-center gap-3 mb-5 reveal">
+              <span className="gold-line-short" />
+              <span className="label-mono-dark">What Sets Her Apart</span>
             </div>
-            <div className="space-y-6">
-              {outcomes.map((o, i) => (
-                <div
-                  key={o.metric}
-                  className="reveal"
-                  style={{
-                    transitionDelay: `${i * 60}ms`,
-                    padding: '1.25rem 1.5rem',
-                    border: '1px solid oklch(0.88 0.008 75)',
-                    background: 'oklch(0.98 0.008 80)',
-                  }}
-                >
-                  <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.125rem', fontWeight: 500, color: 'oklch(0.55 0.12 72)' }}>
-                    {o.metric}
-                  </p>
-                  <p className="mt-1" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.40 0.005 60)', lineHeight: 1.6 }}>
-                    {o.detail}
-                  </p>
+            <h2 className="display-xl reveal" style={{ color: 'oklch(0.10 0.005 60)', maxWidth: '560px', transitionDelay: '80ms' }}>
+              Five reasons partners choose Jaye.
+            </h2>
+          </div>
+
+          <div className="space-y-0">
+            {DIFFERENTIATORS.map((d, i) => (
+              <div
+                key={d.number}
+                className="reveal grid lg:grid-cols-12 gap-8 lg:gap-12 items-start py-10"
+                style={{
+                  borderTop: '1px solid oklch(0.90 0.010 78)',
+                  transitionDelay: `${i * 80}ms`,
+                }}
+              >
+                <div className="lg:col-span-1">
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.2em', color: 'oklch(0.72 0.13 72)' }}>{d.number}</span>
                 </div>
-              ))}
-            </div>
+                <div className="lg:col-span-5">
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 400, color: 'oklch(0.10 0.005 60)', lineHeight: 1.3 }}>{d.title}</h3>
+                </div>
+                <div className="lg:col-span-6">
+                  <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9375rem', color: 'oklch(0.42 0.006 65)', lineHeight: 1.75 }}>{d.body}</p>
+                </div>
+              </div>
+            ))}
+            <div style={{ borderTop: '1px solid oklch(0.90 0.010 78)' }} />
           </div>
         </div>
       </section>
 
-      <div className="gold-rule container" />
-
-      {/* Capabilities Grid */}
-      <section className="py-20 lg:py-28" style={{ background: 'oklch(0.95 0.010 78)' }}>
+      {/* PROOF POINTS */}
+      <section className="py-20 bg-obsidian overflow-hidden">
         <div className="container">
-          <SectionHeader
-            number="02"
-            label="Capabilities"
-            title="A full spectrum of strategic services."
-            subtitle="Each capability is backed by real-world execution, measurable outcomes, and deep industry relationships."
-          />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px mt-12" style={{ background: 'oklch(0.88 0.008 75)' }}>
-            {capabilities.map((cap, i) => (
+          <div className="flex items-center gap-3 mb-10 reveal">
+            <span className="gold-line-short" />
+            <span className="label-mono">What Partners Say</span>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {PROOF_POINTS.map((quote, i) => (
               <div
-                key={cap.number}
-                className="reveal p-8 group transition-colors duration-200"
-                style={{ background: 'oklch(1 0 0)', transitionDelay: `${i * 50}ms` }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'oklch(0.98 0.008 80)'; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'oklch(1 0 0)'; }}
+                key={i}
+                className="reveal p-8"
+                style={{
+                  background: 'oklch(0.10 0.003 60)',
+                  borderLeft: '2px solid oklch(0.72 0.13 72)',
+                  transitionDelay: `${i * 80}ms`,
+                }}
               >
-                <span className="section-number">{cap.number}</span>
-                <h3 className="mt-3" style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 400, color: 'oklch(0.14 0.005 60)' }}>
-                  {cap.title}
-                </h3>
-                <p className="mt-3" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.42 0.005 60)', lineHeight: 1.65 }}>
-                  {cap.description}
+                <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.125rem', fontStyle: 'italic', fontWeight: 300, color: 'oklch(0.85 0.008 75)', lineHeight: 1.6 }}>
+                  {quote}
+                </p>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.45 0.005 65)', marginTop: '1.25rem' }}>
+                  Partner Testimonial
                 </p>
               </div>
             ))}
@@ -175,19 +168,61 @@ export default function WhyPartner() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 lg:py-24 bg-obsidian">
-        <div className="container text-center" style={{ color: 'oklch(0.95 0.008 75)' }}>
-          <div className="reveal max-w-xl mx-auto">
-            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 300, color: 'oklch(0.97 0.008 75)' }}>
-              Ready to explore a partnership?
+      {/* PARTNERSHIP TYPES */}
+      <section className="py-24 lg:py-32 bg-canvas">
+        <div className="container">
+          <div className="mb-16">
+            <div className="flex items-center gap-3 mb-5 reveal">
+              <span className="gold-line-short" />
+              <span className="label-mono-dark">How We Work Together</span>
+            </div>
+            <h2 className="display-xl reveal" style={{ color: 'oklch(0.10 0.005 60)', maxWidth: '560px', transitionDelay: '80ms' }}>
+              Every partnership is custom. Here is where to start.
             </h2>
-            <p className="mt-4 mb-8" style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'oklch(0.65 0.005 60)', lineHeight: 1.7 }}>
-              Schedule a conversation to discuss how Jaye can help your organization achieve its strategic objectives.
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {PARTNERSHIP_TYPES.map((pt, i) => (
+              <div
+                key={pt.title}
+                className="reveal card-editorial overflow-hidden"
+                style={{ transitionDelay: `${i * 80}ms` }}
+              >
+                <div style={{ aspectRatio: '16/9', overflow: 'hidden' }} className="img-zoom">
+                  <img src={pt.img} alt={pt.title} className="w-full h-full object-cover" />
+                </div>
+                <div className="p-8">
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 400, color: 'oklch(0.10 0.005 60)', lineHeight: 1.3, marginBottom: '0.75rem' }}>{pt.title}</h3>
+                  <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9rem', color: 'oklch(0.42 0.006 65)', lineHeight: 1.7, marginBottom: '1rem' }}>{pt.description}</p>
+                  <div style={{ borderTop: '1px solid oklch(0.90 0.010 78)', paddingTop: '1rem' }}>
+                    <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.72 0.13 72)', marginBottom: '0.375rem' }}>Ideal for</p>
+                    <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'oklch(0.50 0.006 65)' }}>{pt.ideal}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 lg:py-32 bg-obsidian text-center">
+        <div className="container">
+          <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+            <div className="flex items-center justify-center gap-3 mb-8 reveal">
+              <span className="gold-line-short" />
+              <span className="label-mono">Begin the Conversation</span>
+              <span className="gold-line-short" />
+            </div>
+            <h2 className="display-xl reveal" style={{ color: 'oklch(0.97 0.008 75)', transitionDelay: '80ms' }}>
+              The right partnership changes everything.
+            </h2>
+            <p className="body-lg mt-6 mb-10 reveal" style={{ color: 'oklch(0.55 0.005 65)', transitionDelay: '160ms' }}>
+              Start with a conversation. Jaye will tell you honestly whether and how she can help.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className="btn-gold">Book a Conversation</Link>
-              <Link href="/portfolio" className="btn-outline-gold">View Case Studies</Link>
+            <div className="flex flex-wrap justify-center gap-4 reveal" style={{ transitionDelay: '240ms' }}>
+              <Link href="/contact" className="btn-primary">Book a Conversation</Link>
+              <Link href="/portfolio" className="btn-outline-light">See the Work</Link>
             </div>
           </div>
         </div>
