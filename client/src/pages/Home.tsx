@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 const STATS = [
   { number: '20+', label: 'Years of Industry Experience' },
   { number: '12+', label: 'Industries Activated' },
-  { number: '3',   label: 'Continents Reached' },
+  { number: '25+', label: 'Global Countries Reached' },
   { number: '100+', label: 'Brand Partnerships Executed' },
 ];
 
@@ -58,9 +58,10 @@ const CONFERENCES = [
 ];
 
 const INDUSTRIES = [
-  'Gaming & Esports', 'Wine & Spirits', 'Music & Entertainment', 'Technology',
-  'Fashion & Lifestyle', 'Food & Beverage', 'Financial Services', 'Sports & Athletics',
-  'Beauty & Wellness', 'Media & Publishing', 'Automotive', 'Travel & Hospitality',
+  'Brand Strategy', 'Technology', 'Behavioral Intelligence', 'Community Building',
+  'Experiential Marketing', 'Gaming', 'Hospitality', 'Storytelling',
+  'Strategic Partnerships', 'Innovation', 'Keynote Speaking', 'Product Development',
+  'Creator Economy', 'Artificial Intelligence', 'Entertainment',
 ];
 
 // ── MEDIA CENTER DATA ──────────────────────────────────────────────────────────
