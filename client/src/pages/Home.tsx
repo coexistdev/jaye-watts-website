@@ -84,7 +84,7 @@ const MEDIA_ENTRIES: MediaEntry[] = [
   {
     id: 1,
     outlet: 'Netflix',
-    title: 'The Future Of — Season 1, Episode 4: Gaming',
+    title: 'The Future Of: Season 1, Episode 4, Gaming',
     description: 'Netflix\'s landmark docuseries spotlights Jaye "Letta J" Watts and Coexist Gaming as a defining force reshaping the future of the gaming industry.',
     category: 'Television',
     type: 'Documentary Series',
@@ -96,7 +96,7 @@ const MEDIA_ENTRIES: MediaEntry[] = [
   {
     id: 2,
     outlet: 'Netflix',
-    title: 'King of Collectibles — Season 2, Episode 5',
+    title: 'King of Collectibles: Season 2, Episode 5',
     description: 'Jaye and Coexist Gaming appear in this Netflix series exploring the world of collectibles, gaming culture, and community-driven commerce.',
     category: 'Television',
     type: 'Documentary Series',
@@ -138,7 +138,7 @@ const MEDIA_ENTRIES: MediaEntry[] = [
     id: 6,
     outlet: 'Rolling Stone',
     title: 'How the Kendrick-Drake Beef Became a Viral Video Game',
-    description: 'Rolling Stone covers the viral "Not Like Us: The Game" — developed inside Coexist Gaming — and Jaye\'s role in bridging hip-hop culture and gaming.',
+    description: 'Rolling Stone covers the viral "Not Like Us: The Game," developed inside Coexist Gaming, and Jaye\'s role in bridging hip-hop culture and gaming.',
     category: 'Music & Entertainment',
     type: 'Feature Article',
     date: 'July 2024',
@@ -351,7 +351,7 @@ const MEDIA_ENTRIES: MediaEntry[] = [
     id: 26,
     outlet: 'Coexist Gaming',
     title: 'Coexist GameHouse Grand Opening',
-    description: 'The official grand opening of the Coexist GameHouse in Midtown NYC — the first subscription-based gaming lounge of its kind.',
+    description: 'The official grand opening of the Coexist GameHouse in Midtown NYC, the first subscription-based gaming lounge of its kind.',
     category: 'Gaming',
     type: 'Event Video',
     href: 'https://www.youtube.com/watch?v=ix9eIAks9oc',
@@ -543,7 +543,6 @@ function SectionHeader({ eyebrow, headline, body, light = false, center = false 
   return (
     <Reveal style={{ textAlign: center ? 'center' : 'left', marginBottom: '3rem' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', justifyContent: center ? 'center' : 'flex-start', marginBottom: '1rem' }}>
-        {!center && <span style={{ width: '24px', height: '1px', background: 'var(--gold)', display: 'block', flexShrink: 0 }} />}
         <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold)' }}>{eyebrow}</span>
       </div>
       <h2 style={{
@@ -602,7 +601,6 @@ function MediaCenter() {
         {/* Header */}
         <Reveal>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1rem' }}>
-            <span style={{ width: '24px', height: '1px', background: 'var(--gold)', display: 'block', flexShrink: 0 }} />
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold)' }}>Media Center</span>
           </div>
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.85rem, 4vw, 3rem)', fontWeight: 300, lineHeight: 1.1, letterSpacing: '-0.02em', color: 'oklch(0.97 0.008 75)', marginBottom: '0.75rem' }}>
@@ -610,7 +608,7 @@ function MediaCenter() {
             <em style={{ color: 'var(--gold)', fontStyle: 'italic' }}>Across every industry she touches.</em>
           </h2>
           <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'oklch(0.55 0.005 65)', lineHeight: 1.75, maxWidth: '560px', marginBottom: '2.5rem' }}>
-            From Netflix documentaries to Rolling Stone features, Billboard coverage to BBC broadcasts — a verified body of press, media, and public appearances spanning business, gaming, music, technology, and culture.
+            From Netflix documentaries to Rolling Stone features, Billboard coverage to BBC broadcasts: a verified body of press, media, and public appearances spanning business, gaming, music, technology, and culture.
           </p>
         </Reveal>
 
@@ -688,7 +686,6 @@ function MediaCenter() {
                     <div style={{ fontFamily: 'var(--font-display)', fontSize: '4rem', fontWeight: 300, color: 'oklch(0.14 0.005 60)', lineHeight: 1, marginBottom: '1rem', letterSpacing: '-0.02em' }}>N</div>
                     <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'oklch(0.30 0.005 65)' }}>Netflix</div>
                     <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.48rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.25 0.005 65)', marginTop: '0.5rem' }}>Documentary Series</div>
-                    <div style={{ width: '40px', height: '1px', background: 'var(--gold)', margin: '1.5rem auto' }} />
                     <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.48rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.35 0.005 65)' }}>Season 1, Episode 4</div>
                   </div>
                 </div>
@@ -787,7 +784,6 @@ export default function Home() {
         <div className="container" style={{ position: 'relative' }}>
           <div style={{ maxWidth: '720px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem', opacity: 0, animation: 'fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s forwards' }}>
-              <span style={{ display: 'block', width: '24px', height: '1px', background: 'var(--gold)' }} />
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold)' }}>Strategic Brand Partner</span>
             </div>
             <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 6.5vw, 5rem)', fontWeight: 300, lineHeight: 1.08, color: 'oklch(0.97 0.008 75)', letterSpacing: '-0.02em', opacity: 0, animation: 'fadeSlideUp 1s cubic-bezier(0.16,1,0.3,1) 0.45s forwards' }}>
@@ -795,7 +791,7 @@ export default function Home() {
               <em style={{ color: 'var(--gold)', fontStyle: 'italic' }}>competitive advantage.</em>
             </h1>
             <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'oklch(0.62 0.005 65)', lineHeight: 1.75, maxWidth: '520px', marginTop: '1.5rem', opacity: 0, animation: 'fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.65s forwards' }}>
-              Jaye "Letta J" Watts has spent 20+ years not just observing culture — but creating it. As an award-winning recording artist, gaming CEO, hospitality professional, experiential marketer, and media personality, she brings a perspective no consultant can replicate.
+              Jaye "Letta J" Watts has spent 20+ years not just observing culture, but creating it. As an award-winning recording artist, gaming CEO, hospitality professional, experiential marketer, and media personality, she brings a perspective no consultant can replicate.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.875rem', marginTop: '2.25rem', opacity: 0, animation: 'fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.8s forwards' }}>
               <button onClick={() => scrollToId('why-partner')} className="btn-primary">Explore the Partnership</button>
@@ -810,7 +806,6 @@ export default function Home() {
         </div>
         <div style={{ position: 'absolute', bottom: '2rem', right: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', opacity: 0, animation: 'fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 1.1s forwards' }}>
           <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.45rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'oklch(0.40 0.005 65)', writingMode: 'vertical-rl' }}>Scroll</span>
-          <div style={{ width: '1px', height: '40px', background: 'linear-gradient(to bottom, var(--gold), transparent)' }} />
         </div>
       </section>
 
@@ -912,7 +907,6 @@ export default function Home() {
         <div className="container" style={{ position: 'relative' }}>
           <div style={{ maxWidth: '640px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.25rem' }}>
-              <span style={{ width: '24px', height: '1px', background: 'var(--gold)', display: 'block' }} />
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold)' }}>Keynote Speaking</span>
             </div>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.85rem, 4vw, 3rem)', fontWeight: 300, lineHeight: 1.1, color: 'oklch(0.97 0.008 75)', letterSpacing: '-0.02em', marginBottom: '1.25rem' }}>
@@ -920,7 +914,7 @@ export default function Home() {
               <em style={{ color: 'var(--gold)' }}>Keynotes that drive action.</em>
             </h2>
             <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'oklch(0.62 0.005 65)', lineHeight: 1.75, marginBottom: '2rem' }}>
-              From SXSW to Cannes Lions, Jaye delivers conversations on culture, brand strategy, gaming, entrepreneurship, and the future of consumer connection that leave audiences with new frameworks — not just inspiration.
+              From SXSW to Cannes Lions, Jaye delivers conversations on culture, brand strategy, gaming, entrepreneurship, and the future of consumer connection that leave audiences with new frameworks, not just inspiration.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.875rem' }}>
               <button onClick={() => scrollToId('contact')} className="btn-primary">Book Jaye to Speak</button>
@@ -986,7 +980,7 @@ export default function Home() {
                 Jaye "Letta J" Watts is an award-winning recording artist, gaming CEO, hospitality professional, experiential marketer, and media personality. She has spent two decades at the intersection of culture and commerce, building brands that communities actually claim as their own.
               </p>
               <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'var(--ink-muted)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
-                Her work spans Fortune 500 brand strategy, independent venture building, keynote speaking, and executive advisory. As a James Beard Award-winning executive chef and captain, she brings a rare depth of craft and cultural fluency — always guided by the same principle: authentic cultural intelligence creates competitive advantage that data alone cannot replicate.
+                Her work spans Fortune 500 brand strategy, independent venture building, keynote speaking, and executive advisory. As a James Beard Award-winning executive chef and captain, she brings a rare depth of craft and cultural fluency, always guided by the same principle: authentic cultural intelligence creates competitive advantage that data alone cannot replicate.
               </p>
               <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'var(--ink-muted)', lineHeight: 1.8, marginBottom: '2rem' }}>
                 When you partner with Jaye, you're not hiring a consultant. You're gaining access to a network, a perspective, and a track record built across industries, communities, and cultural moments that most brands spend years trying to reach.
@@ -1021,7 +1015,7 @@ export default function Home() {
             <em style={{ color: 'var(--gold)' }}>that matters?</em>
           </h2>
           <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'oklch(0.55 0.005 65)', lineHeight: 1.75, maxWidth: '500px', margin: '0 auto 2.5rem' }}>
-            Whether you're launching a product, entering a new market, or building a partnership that lasts — let's start with a conversation.
+            Whether you're launching a product, entering a new market, or building a partnership that lasts. Let's start with a conversation.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center', marginBottom: '4rem' }}>
             <a href="mailto:hello@jayewatts.com" className="btn-primary">Book a Conversation</a>
