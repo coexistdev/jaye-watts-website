@@ -608,7 +608,7 @@ function MediaCenter() {
             Years of real credibility.<br />
             <em style={{ color: 'var(--gold)', fontStyle: 'italic' }}>Across every industry she touches.</em>
           </h2>
-          <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'oklch(0.55 0.005 65)', lineHeight: 1.75, maxWidth: '560px', marginBottom: '2.5rem' }}>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'oklch(0.72 0.005 65)', lineHeight: 1.75, maxWidth: '560px', marginBottom: '2.5rem' }}>
             From Netflix documentaries to Rolling Stone features, Billboard coverage to BBC broadcasts: a verified body of press, media, and public appearances spanning business, gaming, music, technology, and culture.
           </p>
         </Reveal>
@@ -639,6 +639,21 @@ function MediaCenter() {
           </div>
         </Reveal>
 
+
+        {/* Logo Wall: Major Outlets */}
+        {activeCategory === 'All' && (
+          <Reveal delay={120}>
+            <div style={{ borderTop: '1px solid oklch(1 0 0 / 12%)', borderBottom: '1px solid oklch(1 0 0 / 12%)', padding: '2.5rem 0', marginBottom: '3.5rem' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.52rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'oklch(0.55 0.005 65)', textAlign: 'center', marginBottom: '1.75rem' }}>As Featured In</div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.75rem 3.5rem', alignItems: 'center' }}>
+                {['Netflix', 'BBC', 'FOX 5', 'Rolling Stone', 'Billboard', 'Adweek', 'Essence', 'HOT 97', 'Amazon Games', 'GamesIndustry.biz', 'Yahoo Finance', 'LA Weekly'].map(name => (
+                  <span key={name} style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 400, color: 'oklch(0.72 0.005 65)', letterSpacing: '0.01em', whiteSpace: 'nowrap' }}>{name}</span>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        )}
+
         {/* Featured Story */}
         {featured && (activeCategory === 'All' || activeCategory === 'Television') && (
           <Reveal delay={150}>
@@ -665,15 +680,15 @@ function MediaCenter() {
                   <div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
                       <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.52rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--gold)', background: 'oklch(0.14 0.005 60)', padding: '0.3rem 0.75rem', border: '1px solid var(--gold)' }}>Featured</span>
-                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.48rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(0.45 0.005 65)' }}>{featured.type}</span>
+                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.48rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(0.60 0.005 65)' }}>{featured.type}</span>
                     </div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'oklch(0.65 0.005 65)', marginBottom: '0.75rem' }}>{featured.outlet}</div>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'oklch(0.80 0.005 65)', marginBottom: '0.75rem' }}>{featured.outlet}</div>
                     <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 300, color: 'oklch(0.97 0.008 75)', lineHeight: 1.2, letterSpacing: '-0.01em' }}>
                       {featured.title}
                     </h3>
                   </div>
                   <div>
-                    <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9rem', color: 'oklch(0.55 0.005 65)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+                    <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9rem', color: 'oklch(0.72 0.005 65)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
                       {featured.description}
                     </p>
                     <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.52rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--gold)' }}>
@@ -685,9 +700,9 @@ function MediaCenter() {
                 <div style={{ background: 'oklch(0.08 0.004 60)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '3rem' }}>
                   <div style={{ textAlign: 'center' }}>
                     <div style={{ fontFamily: 'var(--font-display)', fontSize: '4rem', fontWeight: 300, color: 'oklch(0.14 0.005 60)', lineHeight: 1, marginBottom: '1rem', letterSpacing: '-0.02em' }}>N</div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'oklch(0.30 0.005 65)' }}>Netflix</div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.48rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.25 0.005 65)', marginTop: '0.5rem' }}>Documentary Series</div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.48rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.35 0.005 65)' }}>Season 1, Episode 4</div>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'oklch(0.65 0.005 65)' }}>Netflix</div>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.48rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.55 0.005 65)', marginTop: '0.5rem' }}>Documentary Series</div>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.48rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.55 0.005 65)' }}>Season 1, Episode 4</div>
                   </div>
                 </div>
               </div>
@@ -695,19 +710,6 @@ function MediaCenter() {
           </Reveal>
         )}
 
-        {/* Logo Wall: Major Outlets */}
-        {activeCategory === 'All' && (
-          <Reveal delay={200}>
-            <div style={{ borderTop: '1px solid oklch(1 0 0 / 8%)', borderBottom: '1px solid oklch(1 0 0 / 8%)', padding: '1.5rem 0', marginBottom: '3rem' }}>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.48rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'oklch(0.30 0.005 65)', textAlign: 'center', marginBottom: '1.25rem' }}>As Featured In</div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.5rem 2.5rem', alignItems: 'center' }}>
-                {['Netflix', 'BBC', 'FOX 5', 'Rolling Stone', 'Billboard', 'Adweek', 'Essence', 'HOT 97', 'Amazon Games', 'GamesIndustry.biz', 'Yahoo Finance', 'LA Weekly'].map(name => (
-                  <span key={name} style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 400, color: 'oklch(0.28 0.005 65)', letterSpacing: '0.01em', whiteSpace: 'nowrap' }}>{name}</span>
-                ))}
-              </div>
-            </div>
-          </Reveal>
-        )}
 
         {/* Media Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
@@ -727,12 +729,12 @@ function MediaCenter() {
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.75rem' }}>
                         <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.52rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--gold)' }}>{entry.outlet}</span>
-                        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.45rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(0.35 0.005 65)', textAlign: 'right', maxWidth: '120px' }}>{entry.type}</span>
+                        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.45rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(0.58 0.005 65)', textAlign: 'right', maxWidth: '120px' }}>{entry.type}</span>
                       </div>
                       <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.05rem', fontWeight: 400, color: 'oklch(0.92 0.006 75)', lineHeight: 1.3, marginBottom: '0.75rem', flex: 1 }}>{entry.title}</h3>
-                      <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.82rem', color: 'oklch(0.45 0.005 65)', lineHeight: 1.65, marginBottom: '1rem' }}>{entry.description}</p>
+                      <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.82rem', color: 'oklch(0.68 0.005 65)', lineHeight: 1.65, marginBottom: '1rem' }}>{entry.description}</p>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto' }}>
-                        {entry.date && <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.45rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(0.30 0.005 65)' }}>{entry.date}</span>}
+                        {entry.date && <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.45rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(0.55 0.005 65)' }}>{entry.date}</span>}
                         {cta && <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--gold)' }}>{cta} →</span>}
                       </div>
                     </a>
@@ -740,11 +742,11 @@ function MediaCenter() {
                     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', background: 'oklch(0.10 0.004 60)', border: '1px solid oklch(1 0 0 / 8%)', padding: '1.5rem' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.75rem' }}>
                         <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.52rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--gold)' }}>{entry.outlet}</span>
-                        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.45rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(0.35 0.005 65)', textAlign: 'right', maxWidth: '120px' }}>{entry.type}</span>
+                        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.45rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(0.58 0.005 65)', textAlign: 'right', maxWidth: '120px' }}>{entry.type}</span>
                       </div>
                       <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.05rem', fontWeight: 400, color: 'oklch(0.92 0.006 75)', lineHeight: 1.3, marginBottom: '0.75rem', flex: 1 }}>{entry.title}</h3>
-                      <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.82rem', color: 'oklch(0.45 0.005 65)', lineHeight: 1.65, marginBottom: '1rem' }}>{entry.description}</p>
-                      {entry.date && <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.45rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(0.30 0.005 65)', marginTop: 'auto' }}>{entry.date}</span>}
+                      <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.82rem', color: 'oklch(0.68 0.005 65)', lineHeight: 1.65, marginBottom: '1rem' }}>{entry.description}</p>
+                      {entry.date && <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.45rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(0.55 0.005 65)', marginTop: 'auto' }}>{entry.date}</span>}
                     </div>
                   )}
                 </div>
