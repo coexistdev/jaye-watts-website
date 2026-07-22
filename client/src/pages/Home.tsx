@@ -198,7 +198,7 @@ export default function Home() {
               <em style={{ color: 'var(--gold)', fontStyle: 'italic' }}>competitive advantage.</em>
             </h1>
             <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'oklch(0.62 0.005 65)', lineHeight: 1.75, maxWidth: '520px', marginTop: '1.5rem', opacity: 0, animation: 'fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.65s forwards' }}>
-              Jaye "Letta J" Watts has spent 20+ years not just observing culture — but creating it. As a musician, gaming executive, wine entrepreneur, experiential marketer, and TV personality, she brings a perspective no consultant can replicate.
+              Jaye "Letta J" Watts has spent 20+ years not just observing culture — but creating it. As an award-winning recording artist, gaming CEO, hospitality professional, experiential marketer, and media personality, she brings a perspective no consultant can replicate.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.875rem', marginTop: '2.25rem', opacity: 0, animation: 'fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.8s forwards' }}>
               <button onClick={() => scrollToId('why-partner')} className="btn-primary">Explore the Partnership</button>
@@ -412,10 +412,10 @@ export default function Home() {
                 headline="Twenty years of culture-making, condensed into one strategic partnership."
               />
               <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'var(--ink-muted)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
-                Jaye "Letta J" Watts is a musician, gaming executive, wine entrepreneur, experiential marketer, TV personality, and strategic advisor. She has spent two decades at the intersection of culture and commerce, building brands that communities actually claim as their own.
+                Jaye "Letta J" Watts is an award-winning recording artist, gaming CEO, hospitality professional, experiential marketer, and media personality. She has spent two decades at the intersection of culture and commerce, building brands that communities actually claim as their own.
               </p>
               <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'var(--ink-muted)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
-                Her work spans Fortune 500 brand strategy, independent venture building, keynote speaking, and executive advisory — always guided by the same principle: authentic cultural intelligence creates competitive advantage that data alone cannot replicate.
+                Her work spans Fortune 500 brand strategy, independent venture building, keynote speaking, and executive advisory. As a James Beard Award-winning executive chef and captain, she brings a rare depth of craft and cultural fluency — always guided by the same principle: authentic cultural intelligence creates competitive advantage that data alone cannot replicate.
               </p>
               <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'var(--ink-muted)', lineHeight: 1.8, marginBottom: '2rem' }}>
                 When you partner with Jaye, you're not hiring a consultant. You're gaining access to a network, a perspective, and a track record built across industries, communities, and cultural moments that most brands spend years trying to reach.
