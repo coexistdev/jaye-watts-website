@@ -424,7 +424,7 @@ export default function Home() {
             </div>
             <div>
               <div style={{ position: 'relative', aspectRatio: '3/4', overflow: 'hidden', background: 'var(--cream)' }}>
-                <img src="/manus-storage/jayetedtalk_1f9f828b.jpg" alt="Jaye Watts on the TED stage" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+                <img src="/manus-storage/jayeconstructionsite_ab81a5bb.webp" alt="Jaye Watts" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: "center center" }} />
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginTop: '1.5rem' }}>
                 {ABOUT_VENTURES.map((item, i) => (
