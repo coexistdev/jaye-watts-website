@@ -29,14 +29,14 @@ const WORK_ITEMS = [
     category: 'Wine & Hospitality',
     title: 'Redefining Luxury Wine for a New Generation of Consumers',
     desc: 'Developed and launched a premium wine brand that speaks directly to multicultural audiences.',
-    img: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=700&q=80',
+    img: '/manus-storage/IMG_2549_348f2cb3.JPG',
     tags: ['Brand Launch', 'Wine', 'Culture'],
   },
   {
     category: 'Experiential Marketing',
     title: 'Immersive Brand Activations That Create Lasting Cultural Memory',
     desc: 'Designed multi-sensory experiences that turned brand moments into cultural movements.',
-    img: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=700&q=80',
+    img: '/manus-storage/GenshinImpact_NYCFestival_JUL2023_jkratochvil_DSC_9091_58ba5564.webp',
     tags: ['Events', 'Activation', 'Experience'],
   },
 ];
