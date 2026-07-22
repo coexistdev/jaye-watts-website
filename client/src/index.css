@@ -361,3 +361,21 @@
 .mobile-nav-open {
   overflow: hidden;
 }
+
+/* ── COMPREHENSIVE MOBILE RESPONSIVE OVERRIDES ─────────────────────────── */
+@media (max-width: 767px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 1.5rem !important; }
+  .why-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+  .why-items-grid { grid-template-columns: 1fr 1fr !important; gap: 1rem !important; }
+  .work-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .work-header { flex-direction: column !important; align-items: flex-start !important; gap: 1rem !important; }
+  .speaking-topics-grid { grid-template-columns: 1fr !important; }
+  .conferences-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .about-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+  .about-ventures-grid { grid-template-columns: 1fr 1fr !important; gap: 1rem !important; }
+  .contact-name-grid { grid-template-columns: 1fr !important; }
+  .media-featured-grid { grid-template-columns: 1fr !important; }
+  .media-grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
+  .logo-wall-name { font-size: 0.95rem !important; }
+  .scroll-indicator { display: none !important; }
+}

@@ -17,8 +17,12 @@ const FOOTER_LINKS = [
 export default function Footer() {
   return (
     <footer style={{ background: 'oklch(0.04 0.002 60)', padding: '4rem 0 2.5rem' }}>
+      <style>{`
+        .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        @media (max-width: 767px) { .footer-grid { grid-template-columns: 1fr; gap: 2rem; } }
+      `}</style>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '3rem', marginBottom: '3rem' }}>
+        <div className="footer-grid">
           {/* Brand */}
           <div>
             <button

@@ -68,8 +68,8 @@ export default function Navigation() {
             Jaye Watts
           </button>
 
-          {/* Desktop nav */}
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '1.75rem' }} className="hidden lg:flex">
+         {/* Desktop nav */}
+          <nav style={{ alignItems: 'center', gap: '1.75rem' }} className="hidden lg:flex">
             {NAV_LINKS.map(link => (
               <button
                 key={link.href}

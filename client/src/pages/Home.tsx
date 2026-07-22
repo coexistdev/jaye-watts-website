@@ -657,7 +657,7 @@ function MediaCenter() {
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.52rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'oklch(0.55 0.005 65)', textAlign: 'center', marginBottom: '1.75rem' }}>As Featured In</div>
               <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.75rem 3.5rem', alignItems: 'center' }}>
                 {['Netflix', 'BBC', 'FOX 5', 'Rolling Stone', 'Billboard', 'Adweek', 'Essence', 'HOT 97', 'Amazon Games', 'GamesIndustry.biz', 'Yahoo Finance', 'LA Weekly'].map(name => (
-                  <span key={name} style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 400, color: 'oklch(0.72 0.005 65)', letterSpacing: '0.01em', whiteSpace: 'nowrap' }}>{name}</span>
+                  <span key={name} className="logo-wall-name" style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 400, color: 'oklch(0.72 0.005 65)', letterSpacing: '0.01em', whiteSpace: 'nowrap' }}>{name}</span>
                 ))}
               </div>
             </div>
@@ -673,7 +673,7 @@ function MediaCenter() {
               rel="noopener noreferrer"
               style={{ textDecoration: 'none', display: 'block', marginBottom: '3rem' }}
             >
-              <div style={{
+              <div className="media-featured-grid" style={{
                 display: 'grid',
                 gridTemplateColumns: '1fr 1fr',
                 gap: '0',
@@ -722,7 +722,7 @@ function MediaCenter() {
 
 
         {/* Media Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+        <div className="media-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
           {filtered.map((entry, i) => {
             const cta = ctaLabel(entry);
             return (
@@ -830,7 +830,7 @@ export default function Home() {
       {/* ══ STATS ══ */}
       <section style={{ background: 'white', padding: '5rem 0' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem' }}>
+          <div className="stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem' }}>
             {STATS.map((s, i) => (
               <Reveal key={i} delay={i * 80} style={{ textAlign: 'center' }}>
                 <div style={{ fontFamily: 'var(--font-display)', fontWeight: 200, fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: 'var(--gold)', lineHeight: 1, letterSpacing: '-0.02em' }}>{s.number}</div>
@@ -844,7 +844,7 @@ export default function Home() {
       {/* ══ WHY PARTNER ══ */}
       <section id="why-partner" style={{ background: 'var(--cream)', padding: '6rem 0' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
+          <div className="why-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
             <div>
               <SectionHeader
                 eyebrow="The Partnership Value"
@@ -861,7 +861,7 @@ export default function Home() {
                   <span key={cap} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.52rem', letterSpacing: '0.12em', textTransform: 'uppercase', padding: '0.35rem 0.75rem', border: '1px solid oklch(0.80 0.005 65)', color: 'var(--ink-light)' }}>{cap}</span>
                 ))}
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginTop: '2rem' }}>
+              <div className="why-items-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginTop: '2rem' }}>
                 {WHY_ITEMS.map((item, i) => (
                   <Reveal key={i} delay={i * 60}>
                     <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.05rem', fontWeight: 500, color: 'var(--ink)', marginBottom: '0.4rem' }}>{item.title}</div>
@@ -877,13 +877,13 @@ export default function Home() {
       {/* ══ FEATURED WORK ══ */}
       <section id="featured-work" style={{ background: 'white', padding: '6rem 0' }}>
         <div className="container">
-          <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '3rem' }}>
+          <div className="work-header" style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '3rem' }}>
           <SectionHeader eyebrow="Featured Work" headline="She doesn't just advise brands, she builds them." />
             <a href="#" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--gold)', textDecoration: 'none', whiteSpace: 'nowrap', marginBottom: '3rem' }}>
               View All Work →
             </a>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+          <div className="work-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
             {WORK_ITEMS.map((item, i) => (
               <Reveal key={i} delay={i * 100}>
                 <div style={{ background: 'white', overflow: 'hidden', transition: 'transform 0.3s cubic-bezier(0.23,1,0.32,1)' }}
@@ -934,7 +934,7 @@ export default function Home() {
               <button onClick={() => scrollToId('contact')} className="btn-outline-light">Speaking Inquiry</button>
             </div>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0', marginTop: '5rem' }}>
+          <div className="speaking-topics-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0', marginTop: '5rem' }}>
             {SPEAKING_TOPICS.map((topic, i) => (
               <Reveal key={i} delay={i * 80}>
                 <div style={{ borderTop: '1px solid oklch(1 0 0 / 15%)', padding: '1.75rem 1.5rem 1.75rem 0' }}>
@@ -946,7 +946,7 @@ export default function Home() {
           </div>
           <div style={{ marginTop: '4rem' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.52rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'oklch(0.45 0.005 65)', marginBottom: '1.5rem' }}>Conferences & Events</div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1px', background: 'oklch(1 0 0 / 8%)' }}>
+            <div className="conferences-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1px', background: 'oklch(1 0 0 / 8%)' }}>
               {CONFERENCES.map((conf, i) => (
                 <div key={i} style={{ background: 'oklch(0.06 0.003 60)', padding: '1.25rem', textAlign: 'center' }}>
                   <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.05rem', fontWeight: 400, color: 'oklch(0.90 0.008 75)', marginBottom: '0.3rem' }}>{conf.name}</div>
@@ -983,7 +983,7 @@ export default function Home() {
       {/* ══ ABOUT ══ */}
       <section id="about" style={{ background: 'white', padding: '6rem 0' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
+          <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
             <div>
               <SectionHeader
                 eyebrow="About Jaye"
@@ -1015,7 +1015,7 @@ export default function Home() {
               <div style={{ position: 'relative', aspectRatio: '3/4', overflow: 'hidden', background: 'var(--cream)' }}>
                 <img src="/manus-storage/jayeconstructionsite_ab81a5bb.webp" alt="Jaye Watts" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: "center center" }} />
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginTop: '1.5rem' }}>
+              <div className="about-ventures-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginTop: '1.5rem' }}>
                 {ABOUT_VENTURES.map((item, i) => (
                   <Reveal key={i} delay={i * 80}>
                     <div style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 500, color: 'var(--ink)', marginBottom: '0.35rem' }}>{item.title}</div>
@@ -1046,7 +1046,7 @@ export default function Home() {
             <button onClick={() => {}} className="btn-outline-light">Download Media Kit</button>
           </div>
           <div style={{ maxWidth: '560px', margin: '0 auto', textAlign: 'left' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+            <div className="contact-name-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
               {['First Name', 'Last Name'].map(label => (
                 <div key={label}>
                   <label style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.45 0.005 65)', display: 'block', marginBottom: '0.4rem' }}>{label}</label>
