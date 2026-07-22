@@ -1043,7 +1043,7 @@ export default function Home() {
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center', marginBottom: '4rem' }}>
             <a href="mailto:hello@jayewatts.com" className="btn-primary">Book a Conversation</a>
-            <button onClick={() => {}} className="btn-outline-light">Download Media Kit</button>
+            <a href="/manus-storage/LettaJGamerArtistsPressKit_67c226b9.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline-light" style={{ display: 'inline-block', textDecoration: 'none' }}>Download Media Kit</a>
           </div>
           <div style={{ maxWidth: '560px', margin: '0 auto', textAlign: 'left' }}>
             <div className="contact-name-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
