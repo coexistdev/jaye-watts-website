@@ -36,7 +36,7 @@ const WORK_ITEMS = [
     category: 'Experiential Marketing',
     title: 'Immersive Brand Activations That Create Lasting Cultural Memory',
     desc: 'Designed multi-sensory experiences that turned brand moments into cultural movements.',
-    img: '/manus-storage/GenshinImpact_NYCFestival_JUL2023_jkratochvil_DSC_9091_58ba5564.webp',
+    img: '/manus-storage/GenshinImpact_NYCFestival_JUL2023_jkratochvil_DSC_8703-2_70e043e0.webp',
     tags: ['Events', 'Activation', 'Experience'],
   },
 ];
