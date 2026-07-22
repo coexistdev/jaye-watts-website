@@ -478,10 +478,10 @@ const MEDIA_CATEGORIES: MediaCategory[] = [
 ];
 
 const ABOUT_VENTURES = [
-  { title: 'Gaming Executive', desc: 'Built and scaled gaming ventures reaching millions of players globally.' },
-  { title: 'Wine Entrepreneur', desc: 'Founded a premium wine brand redefining luxury for diverse audiences.' },
-  { title: 'TV Personality', desc: 'Featured across major networks as a cultural authority and brand voice.' },
-  { title: 'Keynote Speaker', desc: 'Delivered transformative talks at SXSW, Cannes Lions, Forbes CMO Summit.' },
+  { title: 'Founder, CEO & Tech Innovator', desc: 'Building technology, gaming platforms, and behavioral intelligence systems that transform how people connect, engage, and experience brands.' },
+  { title: 'Hospitality & Luxury Visionary', desc: 'James Beard Award-winning Captain, Executive Chef and Wine Sommelier, blending world-class hospitality, luxury service, and experiential design into unforgettable moments.' },
+  { title: 'Award-Winning Recording Artist', desc: 'Grammy-winning choir member, published songwriter, using music to inspire millions and shape culture through storytelling.' },
+  { title: 'Media Personality & Keynote Speaker', desc: 'Trusted voice featured across global media and international stages, translating innovation, entrepreneurship, gaming, and culture into compelling conversations.' },
 ];
 
 const WHY_ITEMS = [
