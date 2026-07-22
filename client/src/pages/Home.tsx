@@ -1035,36 +1035,29 @@ export default function Home() {
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold)' }}>Ready to Partner</span>
           </div>
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 5vw, 3.75rem)', fontWeight: 300, lineHeight: 1.1, color: 'oklch(0.97 0.008 75)', letterSpacing: '-0.02em', maxWidth: '700px', margin: '0 auto 1.25rem' }}>
-            Ready to build something<br />
-            <em style={{ color: 'var(--gold)' }}>that matters?</em>
+            Let's Build Something<br />
+            <em style={{ color: 'var(--gold)' }}>Meaningful</em>
           </h2>
-          <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'oklch(0.55 0.005 65)', lineHeight: 1.75, maxWidth: '500px', margin: '0 auto 2.5rem' }}>
-            Whether you're launching a product, entering a new market, or building a partnership that lasts. Let's start with a conversation.
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1.05rem', color: 'oklch(0.70 0.005 65)', lineHeight: 1.8, maxWidth: '580px', margin: '0 auto 3rem' }}>
+            Whether you're exploring a keynote, strategic partnership, investment opportunity, advisory role, media feature, or simply believe there's an opportunity for us to create something impactful together, I'd love to hear from you.
           </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center', marginBottom: '4rem' }}>
-            <a href="mailto:hello@jayewatts.com" className="btn-primary">Book a Conversation</a>
-            <a href="/manus-storage/LettaJGamerArtistsPressKit_67c226b9.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline-light" style={{ display: 'inline-block', textDecoration: 'none' }}>Download Media Kit</a>
-          </div>
-          <div style={{ maxWidth: '560px', margin: '0 auto', textAlign: 'left' }}>
-            <div className="contact-name-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-              {['First Name', 'Last Name'].map(label => (
-                <div key={label}>
-                  <label style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.45 0.005 65)', display: 'block', marginBottom: '0.4rem' }}>{label}</label>
-                  <input type="text" placeholder={label} style={{ width: '100%', background: 'oklch(0.10 0.004 60)', border: '1px solid oklch(1 0 0 / 12%)', padding: '0.75rem 1rem', fontFamily: 'var(--font-sans)', fontSize: '0.9rem', color: 'oklch(0.85 0.005 65)', outline: 'none' }} />
-                </div>
-              ))}
-            </div>
-            {[{ label: 'Email', type: 'email', placeholder: 'your@email.com' }, { label: 'Company', type: 'text', placeholder: 'Your Company' }].map(f => (
-              <div key={f.label} style={{ marginBottom: '1rem' }}>
-                <label style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.45 0.005 65)', display: 'block', marginBottom: '0.4rem' }}>{f.label}</label>
-                <input type={f.type} placeholder={f.placeholder} style={{ width: '100%', background: 'oklch(0.10 0.004 60)', border: '1px solid oklch(1 0 0 / 12%)', padding: '0.75rem 1rem', fontFamily: 'var(--font-sans)', fontSize: '0.9rem', color: 'oklch(0.85 0.005 65)', outline: 'none' }} />
-              </div>
-            ))}
-            <div style={{ marginBottom: '1.5rem' }}>
-              <label style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.45 0.005 65)', display: 'block', marginBottom: '0.4rem' }}>Message</label>
-              <textarea rows={4} placeholder="Tell me about your brand and what you're looking to achieve..." style={{ width: '100%', background: 'oklch(0.10 0.004 60)', border: '1px solid oklch(1 0 0 / 12%)', padding: '0.75rem 1rem', fontFamily: 'var(--font-sans)', fontSize: '0.9rem', color: 'oklch(0.85 0.005 65)', outline: 'none', resize: 'vertical' }} />
-            </div>
-            <button className="btn-primary" style={{ width: '100%', justifyContent: 'center' }}>Send Message</button>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
+            <a
+              href="mailto:jaye@coexistgaming.com?subject=Let%27s%20Build%20Something%20Meaningful"
+              className="btn-primary"
+              style={{ fontSize: '0.65rem', padding: '0.9rem 2.5rem', letterSpacing: '0.18em', textDecoration: 'none' }}
+            >
+              Email Me
+            </a>
+            <a
+              href="mailto:jaye@coexistgaming.com?subject=Let%27s%20Build%20Something%20Meaningful"
+              style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', letterSpacing: '0.12em', color: 'oklch(0.55 0.005 65)', textDecoration: 'none', borderBottom: '1px solid oklch(0.30 0.005 65)', paddingBottom: '0.15rem', transition: 'color 0.2s ease, border-color 0.2s ease' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'var(--gold)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--gold)'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'oklch(0.55 0.005 65)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'oklch(0.30 0.005 65)'; }}
+            >
+              jaye@coexistgaming.com
+            </a>
+            <a href="/manus-storage/LettaJGamerArtistsPressKit_67c226b9.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline-light" style={{ display: 'inline-block', textDecoration: 'none', fontSize: '0.55rem', letterSpacing: '0.16em' }}>Download Media Kit</a>
           </div>
         </div>
       </section>
