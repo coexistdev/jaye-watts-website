@@ -213,7 +213,7 @@ const MEDIA_ENTRIES: MediaEntry[] = [
     id: 13,
     outlet: 'Yahoo Finance',
     title: 'The Future of Gaming: Netflix Docuseries Puts Coexist Gaming in the Spotlight',
-    description: 'Yahoo Finance covers the Netflix feature on Coexist Gaming and Jaye\'s Grammy-nominated journey from music to gaming CEO.',
+    description: 'Yahoo Finance covers the Netflix feature on Coexist Gaming and Jaye\'s Grammy-nominated journey from music to CEO.',
     category: 'Technology',
     type: 'Press Release',
     date: 'October 2023',
@@ -804,7 +804,7 @@ export default function Home() {
               <em style={{ color: 'var(--gold)', fontStyle: 'italic' }}>competitive advantage.</em>
             </h1>
             <p style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'oklch(0.62 0.005 65)', lineHeight: 1.75, maxWidth: '520px', marginTop: '1.5rem', opacity: 0, animation: 'fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.65s forwards' }}>
-              Jaye "Letta J" Watts has spent 20+ years not just observing culture, but creating it. As an award-winning recording artist, gaming CEO, hospitality professional, experiential marketer, and media personality, she brings a perspective no consultant can replicate.
+              Jaye "Letta J" Watts has spent 20+ years not just observing culture, but creating it. As an award-winning recording artist, CEO, hospitality professional, experiential marketer, and media personality, she brings a perspective no consultant can replicate.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.875rem', marginTop: '2.25rem', opacity: 0, animation: 'fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.8s forwards' }}>
               <button onClick={() => scrollToId('why-partner')} className="btn-primary">Explore the Partnership</button>
