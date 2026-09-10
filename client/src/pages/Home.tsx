@@ -22,21 +22,21 @@ const WORK_ITEMS = [
     category: 'Gaming, Tech & AI',
     title: 'Building the Bridge Between Gaming Culture and Mainstream Brands',
     desc: 'Architected brand entry strategies for Fortune 500 companies entering the gaming space.',
-    img: '/manus-storage/WebOptimized-2882_5013cc18.jpg',
+    img: '/assets/WebOptimized-2882_5013cc18.jpg',
     tags: ['Strategy', 'Gaming', 'Brand'],
   },
   {
     category: 'Wine & Hospitality',
     title: 'Redefining Luxury Wine for a New Generation of Consumers',
     desc: 'Developed and launched a premium wine brand that speaks directly to multicultural audiences.',
-    img: '/manus-storage/IMG_2549_348f2cb3.JPG',
+    img: '/assets/IMG_2549_348f2cb3.JPG',
     tags: ['Brand Launch', 'Wine', 'Culture'],
   },
   {
     category: 'Experiential Marketing',
     title: 'Immersive Brand Activations That Create Lasting Cultural Memory',
     desc: 'Designed multi-sensory experiences that turned brand moments into cultural movements.',
-    img: '/manus-storage/GenshinImpact_NYCFestival_JUL2023_jkratochvil_DSC_8703-2_70e043e0.webp',
+    img: '/assets/GenshinImpact_NYCFestival_JUL2023_jkratochvil_DSC_8703-2_70e043e0.webp',
     tags: ['Events', 'Activation', 'Experience'],
   },
 ];
@@ -787,7 +787,7 @@ export default function Home() {
       <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'flex-end', paddingBottom: '10vh', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0 }}>
           <img
-            src="/manus-storage/jaye-hero-portrait_b26f5a7c.jpg"
+            src="/assets/jaye-hero-portrait_b26f5a7c.jpg"
             alt="Jaye Watts"
             style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.38)' }}
           />
@@ -914,7 +914,7 @@ export default function Home() {
       {/* ══ SPEAKING ══ */}
       <section id="speaking" style={{ position: 'relative', padding: '7rem 0', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0 }}>
-          <img src="/manus-storage/jayetedtalkwide_3b9f0a55.PNG" alt="Jaye Watts on the TED stage" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center', filter: 'brightness(0.32)' }} />
+          <img src="/assets/jayetedtalkwide_3b9f0a55.PNG" alt="Jaye Watts on the TED stage" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center', filter: 'brightness(0.32)' }} />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, oklch(0.06 0.003 60 / 90%) 0%, oklch(0.06 0.003 60 / 40%) 100%)' }} />
         </div>
         <div className="container" style={{ position: 'relative' }}>
@@ -1013,7 +1013,7 @@ export default function Home() {
             </div>
             <div>
               <div style={{ position: 'relative', aspectRatio: '3/4', overflow: 'hidden', background: 'var(--cream)' }}>
-                <img src="/manus-storage/jayeconstructionsite_ab81a5bb.webp" alt="Jaye Watts" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: "center center" }} />
+                <img src="/assets/jayeconstructionsite_ab81a5bb.webp" alt="Jaye Watts" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: "center center" }} />
               </div>
               <div className="about-ventures-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginTop: '1.5rem' }}>
                 {ABOUT_VENTURES.map((item, i) => (
@@ -1057,7 +1057,7 @@ export default function Home() {
             >
               jaye@coexistgaming.com
             </a>
-            <a href="/manus-storage/LettaJGamerArtistsPressKit_67c226b9.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline-light" style={{ display: 'inline-block', textDecoration: 'none', fontSize: '0.55rem', letterSpacing: '0.16em' }}>Download Media Kit</a>
+            <a href="/assets/LettaJGamerArtistsPressKit_67c226b9.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline-light" style={{ display: 'inline-block', textDecoration: 'none', fontSize: '0.55rem', letterSpacing: '0.16em' }}>Download Media Kit</a>
           </div>
         </div>
       </section>
