@@ -35,6 +35,22 @@ jobs:
       - name: Build client
         run: pnpm exec vite build
 
+      # Public assets are referenced as /assets/... in the React source.
+      # GitHub Pages serves this repository under /jaye-watts-website/, so
+      # rewrite those URLs in the compiled output to the repository subpath.
+      - name: Fix asset paths for GitHub Pages
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          root = Path("dist/public")
+          prefix = "/jaye-watts-website/assets/"
+          for path in root.rglob("*"):
+              if path.is_file() and path.suffix in {".html", ".js", ".css"}:
+                  text = path.read_text(encoding="utf-8")
+                  text = text.replace("/assets/", prefix)
+                  path.write_text(text, encoding="utf-8")
+          PY
+
       - name: Add SPA fallback
         run: cp dist/public/index.html dist/public/404.html
 
