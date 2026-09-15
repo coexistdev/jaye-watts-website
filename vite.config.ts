@@ -4,7 +4,6 @@ import react from "@vitejs/plugin-react";
 import fs from "node:fs";
 import path from "node:path";
 import { defineConfig, type Plugin, type ViteDevServer } from "vite";
-import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
 // =============================================================================
 // Manus Debug Collector - Vite Plugin
@@ -190,7 +189,15 @@ function vitePluginStorageProxy(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
+// GitHub Pages is a static host. The Manus runtime is for Manus preview/development
+// and must not be injected into the production GitHub Pages build.
+const plugins = [
+  react(),
+  tailwindcss(),
+  jsxLocPlugin(),
+  vitePluginManusDebugCollector(),
+  vitePluginStorageProxy(),
+];
 
 export default defineConfig({
   // GitHub Pages serves this repository at /jaye-watts-website/.
