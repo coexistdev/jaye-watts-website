@@ -40,9 +40,9 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
+- name: Setup Pages
+  uses: actions/configure-pages@v5
+- name: Upload Pages artifact
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
