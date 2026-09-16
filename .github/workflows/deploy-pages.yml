@@ -35,26 +35,6 @@ jobs:
       - name: Build client
         run: pnpm exec vite build
 
-      # Vite already adds /jaye-watts-website/ to compiled JS and CSS paths.
-      # Public files under /assets/ are the exception, so only rewrite a root
-      # /assets/ reference when it is not already prefixed by the GitHub Pages path.
-      - name: Fix public asset paths for GitHub Pages
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          import re
-
-          root = Path("dist/public")
-          prefix = "/jaye-watts-website/assets/"
-          pattern = re.compile(r'(?<!/jaye-watts-website)/assets/')
-
-          for path in root.rglob("*"):
-              if path.is_file() and path.suffix in {".html", ".js", ".css"}:
-                  text = path.read_text(encoding="utf-8")
-                  text = pattern.sub(prefix, text)
-                  path.write_text(text, encoding="utf-8")
-          PY
-
       - name: Add SPA fallback
         run: cp dist/public/index.html dist/public/404.html
 
