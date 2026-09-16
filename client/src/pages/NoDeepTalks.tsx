@@ -78,7 +78,7 @@ export default function NoDeepTalks() {
       <main className="relative mx-auto min-h-screen max-w-xl px-5 py-8 flex flex-col justify-center">
         {screen === "home" && <div className="text-center">
           <span className="inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-bold tracking-[.18em] text-white/70">A FRIENDSHIP RESET GAME</span>
-          <h1 className="mt-7 text-6xl font-black leading-[.82] tracking-[-.06em] sm:text-7xl">NO DEEP<br/><span className="bg-gradient-to-r from-fuchsia-400 to-violet-400 bg-clip-text text-transparent">TALKS.</span></h1>
+          <h1 className="mt-7 text-6xl font-black leading-[.82] tracking-[-.06em] sm:text-7xl">BUDDY<br/><span className="bg-gradient-to-r from-fuchsia-400 to-violet-400 bg-clip-text text-transparent">AND THE BOOTY.</span></h1>
           <p className="mx-auto mt-7 max-w-md text-base leading-7 text-white/55">Two people. One deck. Zero emotional dissertations. The goal is simple: leave happier than you started.</p>
           <button onClick={() => setScreen("names")} className="mt-8 w-full rounded-2xl bg-gradient-to-r from-fuchsia-500 to-violet-500 px-5 py-4 font-black shadow-lg shadow-fuchsia-500/20">START GAME <ArrowRight className="ml-2 inline" size={18}/></button>
         </div>}
@@ -100,7 +100,7 @@ export default function NoDeepTalks() {
           <div className="min-h-[380px] rounded-[30px] border border-white/10 bg-gradient-to-br from-[#1a1722] to-[#101016] p-7 shadow-2xl shadow-black/40">
             <div className="flex items-center justify-between"><span className="rounded-full border border-white/15 px-3 py-1 text-[10px] font-black tracking-widest text-white/60">{card?.icon} {card?.category}</span><Dice5 className="text-white/20"/></div>
             <div className="flex min-h-[285px] items-center"><h3 className="text-3xl font-black leading-tight tracking-tight">{card?.prompt}</h3></div>
-            <div className="text-center text-xs text-white/30">🚨 NO DEEP TALKS. PASS IF YOU WANT.</div>
+            <div className="text-center text-xs text-white/30">🚨 BUDDY AND THE BOOTY. PASS IF YOU WANT.</div>
           </div>
           {!scored ? <div className="mt-4 grid grid-cols-2 gap-2"><button onClick={()=>award(1)} className="rounded-xl border border-white/10 bg-white/5 py-3 text-xs font-black">+1 CORRECT</button><button onClick={()=>award(1)} className="rounded-xl border border-white/10 bg-white/5 py-3 text-xs font-black">+1 MADE ME LAUGH</button><button onClick={()=>award(2)} className="rounded-xl border border-white/10 bg-white/5 py-3 text-xs font-black">+2 UNEXPECTED</button><button onClick={()=>award(3)} className="rounded-xl border border-fuchsia-400/20 bg-fuchsia-500/10 py-3 text-xs font-black">+3 LEGENDARY</button></div> : <button onClick={()=>drawNext(true)} className="mt-4 w-full rounded-2xl bg-white py-4 font-black text-black">NEXT CARD <ArrowRight className="ml-2 inline" size={17}/></button>}
         </div>}
