@@ -8,10 +8,16 @@ import Home from "./pages/Home";
 import NoDeepTalks from "./pages/NoDeepTalks";
 
 function Router() {
+  const isBuddyDomain =
+    typeof window !== "undefined" &&
+    (window.location.hostname === "buddyandthebooty.com" ||
+      window.location.hostname === "www.buddyandthebooty.com");
+
   return (
     <WouterRouter>
       <Switch>
-        <Route path={"/"} component={Home} />
+        {/* The custom Buddy and the Booty domain gets the game at its homepage. */}
+        <Route path={"/"} component={isBuddyDomain ? NoDeepTalks : Home} />
         <Route path={"/no-deep-talks"} component={NoDeepTalks} />
         <Route path={"/buddy-and-the-booty"} component={NoDeepTalks} />
         <Route path={"/404"} component={NotFound} />
